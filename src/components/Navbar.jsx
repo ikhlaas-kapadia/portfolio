@@ -14,15 +14,11 @@ const StyledLink = styled(Link)`
 
 const Nav = styled.nav`
   display: flex;
-  //   position: fixed;
   width: 100%;
-  //   height: 90px;
+  height: 90px;
   justify-content: center;
   align-items: center;
-  //   z-index: 999;
-  //   text-align: center;
-  border: 1px solid purple;
-  //   background-color: purple;
+  border: 2px solid green;
 `;
 
 render(

@@ -6,32 +6,30 @@ import { render } from "@testing-library/react";
 
 const Header = styled.header`
   position: fixed;
-  background-color: red;
+  background-color: #073e77;
   //   border: 1px solid green;
   top: 0;
   width: 100%;
-  height: 90px;
-  //   z-index: 90;
+  height: 10vh;
+  z-index: 90;
 `;
 
 const StyledLink = styled(Link)`
-  color: black;
+  color: #c8f70f;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0rem 2rem;
-  text-decoration none;
+  text-decoration: none;
   border: 1px solid yellow;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  //   position: fixed;
   width: 100%;
-  height: 90px;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  border: 1px solid purple;
-  //   background-color: purple;
+  /* border: 3px solid purple; */
 `;
 render(
   <Header>
