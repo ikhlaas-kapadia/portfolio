@@ -6,7 +6,7 @@ import { render } from "@testing-library/react";
 
 const Header = styled.header`
   position: fixed;
-  background-color: #073e77;
+  background-color: #020123;
   //   border: 1px solid green;
   top: 0;
   width: 100%;
@@ -15,12 +15,37 @@ const Header = styled.header`
 `;
 
 const StyledLink = styled(Link)`
-  color: #c8f70f;
+  color: #989898;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0rem 2rem;
+  margin: 0rem 2rem;
   text-decoration: none;
-  border: 1px solid yellow;
+  /* border-bottom: 1px solid transparent; */
+  transition-duration: 0.5s;
+  &:after {
+    display: block;
+    content: "";
+    border-bottom: solid 2px #019fb6;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+  &:before {
+    display: block;
+    content: "";
+    border-bottom: solid 2px #019fb6;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
 `;
 
 const Nav = styled.nav`

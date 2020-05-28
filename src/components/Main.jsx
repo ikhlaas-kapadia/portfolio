@@ -33,15 +33,14 @@ const HeroHeading = styled.h1`
   color: white;
   /* border: 1px solid red; */
   font-size: 6rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
   margin: 0;
 `;
 const HeroSubHeading = styled.h2`
   color: white;
-  /* border: 1px solid red; */
-  margin: 0;
   letter-spacing: 0.1rem;
   color: #c8f70f;
+  margin-top: -10px;
 `;
 
 render(
