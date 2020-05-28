@@ -3,31 +3,51 @@ import { Link } from "@reach/router";
 import styled from "styled-components";
 import { render } from "@testing-library/react";
 
-const StyledLink = styled(Link)`
-  color: black;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0rem 2rem;
-  text-decoration none;
-  border: 1px solid yellow;
-`;
-
-const Nav = styled.nav`
+const StyledNav = styled.nav`
   display: flex;
-  width: 100%;
-  height: 90px;
-  justify-content: center;
+  /* width: 100%; */
+  height: 100%;
+  justify-content: flex-start;
   align-items: center;
-  border: 2px solid green;
+
+  /* border: 3px solid purple; */
 `;
 
-render(
-  <Nav>
-    <StyledLink to="/home">Home</StyledLink>
-    <StyledLink to="/about">About Me</StyledLink>
-    <StyledLink to="/portfolio">Portfolio</StyledLink>
-    <StyledLink to="/contact">Contact</StyledLink>
-  </Nav>
-);
+const StyledLink = styled(Link)`
+  /* flex-basis: 200%; */
+  text-align: center;
+  width: 120px;
+  color: #989898;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  margin: 0rem 2rem;
+  text-decoration: none;
+  /* border: 1px solid yellow; */
+  transition-duration: 0.5s;
+  &:after {
+    display: block;
+    content: "";
+    border-bottom: solid 1.2px #7245ad;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
 
-export default Nav;
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+  &:before {
+    display: block;
+    content: "";
+    border-bottom: solid 1.2px #7245ad;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+`;
+
+export { StyledNav, StyledLink };

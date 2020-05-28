@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import { render } from "@testing-library/react";
 import codingImage from "../background-images/coding.jpg";
 import backgroundImage from "../background-images/background.jpg";
 
-const Main = styled.main`
+const StyledMain = styled.main`
   margin-top: 10vh;
   /* border: 5px solid pink; */
-`;
-
-const HeroBox = styled.section`
-  height: 80vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0,0,33,1.5),rgba(0,0,0,0.5)),url("${backgroundImage}");
+  background-image: linear-gradient(rgba(0,0,33,1.5),rgba(11, 1, 21, 0.49)),
+    /* url("./background-images/coding.jpg"); */
+url("${backgroundImage}");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+`;
+
+const HeroBox = styled.section`
+  height: 90vh;
+  width: 100%;
+  /* background-image: linear-gradient(rgba(0,0,33,1.5),rgba(0,0,0,0.5)),url("${backgroundImage}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
   /* display: flex;
   align-items: center; */
 `;
@@ -43,15 +48,17 @@ const HeroSubHeading = styled.h2`
   margin-top: -10px;
 `;
 
-render(
-  <Main>
-    <HeroBox>
-      <HeroTextBox>
-        <HeroHeading>Ikhlaas Kapadia</HeroHeading>
-        <HeroSubHeading>Software Developer</HeroSubHeading>
-      </HeroTextBox>
-    </HeroBox>
-  </Main>
-);
+const Main = () => {
+  return (
+    <StyledMain>
+      <HeroBox>
+        <HeroTextBox>
+          <HeroHeading>Ikhlaas Kapadia</HeroHeading>
+          <HeroSubHeading>Software Developer</HeroSubHeading>
+        </HeroTextBox>
+      </HeroBox>
+    </StyledMain>
+  );
+};
 
 export default Main;
