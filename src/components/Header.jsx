@@ -6,7 +6,7 @@ import { StyledLink, StyledNav } from "./Navbar";
 
 const StyledHeader = styled.header`
   position: fixed;
-  background-color: #060001;
+  background-color: #0c0c0c;
   /* border: 1px solid green; */
   display: flex;
   flex-direction: row;
@@ -17,14 +17,13 @@ const StyledHeader = styled.header`
 `;
 
 const SocialMediaBox = styled.div`
-  color: white;
+  color: #ffffff;
   /* border: 1px solid green; */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 `;
-
 const SocialMediaIcon = styled.a`
   /* border: 1px solid yellow; */
   margin: 5%;
@@ -48,10 +47,10 @@ const Header = () => {
       </StyledNav>
       <SocialMediaBox>
         <SocialMediaIcon>
-          <i class="fab fa-linkedin"></i>
+          <i className="fab fa-linkedin"></i>
         </SocialMediaIcon>
         <SocialMediaIcon>
-          <i class="fab fa-github"></i>
+          <i className="fab fa-github"></i>
         </SocialMediaIcon>
       </SocialMediaBox>
     </StyledHeader>

@@ -17,11 +17,12 @@ const StyledLink = styled(Link)`
   /* flex-basis: 200%; */
   text-align: center;
   width: 120px;
-  color: #989898;
+  color: #ffffff;
   font-size: 1.2rem;
-  font-weight: lighter;
-  margin: 0rem 2rem;
+  font-weight: 400;
+  margin: 0rem 1rem;
   text-decoration: none;
+  letter-spacing: 0.1rem;
   /* border: 1px solid yellow; */
   transition-duration: 0.5s;
   &:after {
