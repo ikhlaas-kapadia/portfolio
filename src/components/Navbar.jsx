@@ -16,7 +16,7 @@ const StyledNav = styled.nav`
 const StyledLink = styled(Link)`
   /* flex-basis: 200%; */
   text-align: center;
-  width: 120px;
+  width: 100px;
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 400;

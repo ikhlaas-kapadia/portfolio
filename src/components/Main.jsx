@@ -33,12 +33,11 @@ const HeroHeadings = styled.section`
 `;
 
 const HeroHeading = styled.h1`
-  color: #000000;
+  color: white;
   font-size: 4rem;
   font-weight: 400;
   letter-spacing: 0.3rem;
   margin-bottom: 10px;
-  background-color: #ffffff2b;
 `;
 
 const HeroTextBox = styled.section`
@@ -58,7 +57,7 @@ const ProjectButton = styled(Link)`
   padding: 1rem;
   text-decoration: none;
   color: white;
-  background-color: #000000a8;
+  background-color: #00000094;
   &:hover {
     background-color: #000000c7;
   }
@@ -72,8 +71,8 @@ const Main = () => {
           <HeroHeading>Ikhlaas Kapadia</HeroHeading>
         </HeroHeadings>
         <HeroTextBox>
-          ＜An aspiring Full Stack Developer looking for an opportunity to
-          fulfill passion of learning more/>
+          ＜ A Software Developer passionate about learning new things and
+          progressing further />
           {/* <ProjectButton>Check My work</ProjectButton> */}
         </HeroTextBox>
         <ProjectButton to="/projects">Check Out My Work</ProjectButton>

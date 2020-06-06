@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledNav>
-        <StyledLink to="/home">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/about">About Me</StyledLink>
         <StyledLink to="/portfolio">Portfolio</StyledLink>
         <StyledLink to="/contact">Contact</StyledLink>
