@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { StyledMain, StyledHeading } from "./About";
 
+
+import demo from "../videos/demo1.mp4";
+// import demo from "../videos/demo.mp4";
+
+import styles from "../Projects.module.css";
+
 const ProjectsContainer = styled.main`
   display: flex;
   align-content: flex-start;
@@ -45,8 +51,6 @@ const ProjectTitle = styled.h2`
   margin: 0;
 `;
 
-const ProjectGif = styled.img``;
-
 const Button = styled.a``;
 
 const Projects = () => {
@@ -56,7 +60,10 @@ const Projects = () => {
       <ProjectsContainer>
         <IndividualProject>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectGif></ProjectGif>
+          <video className={styles.ProjectDemo} loop autoplay="true">
+            {" "}
+            <source src={demo} type="video/mp4"></source>
+          </video>
           <ProjectDescription>
             A full stack Reddit style web application. Allows visitors to view
             articles and filter by topic author and other criteria. The backend
@@ -70,7 +77,7 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Hubert</ProjectTitle>
-          <ProjectGif></ProjectGif>
+
           <ProjectDescription>
             A full stack cross platform hide and seek game for mobile. Users can
             create an account, create a lobby and play with other players. The
@@ -85,7 +92,7 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Portfolio Site</ProjectTitle>
-          <ProjectGif></ProjectGif>
+
           <ProjectDescription>
             My Portfolio page showcasing my projects and skills.
             <br></br>
@@ -96,7 +103,6 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Noughts And Crosses</ProjectTitle>
-          <ProjectGif></ProjectGif>
           <ProjectDescription>
             My Portfolio page created using React.js, React Styled Components,
             Reach Router and HTML/CSS.
@@ -108,7 +114,7 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Meteorite Visualisation App</ProjectTitle>
-          <ProjectGif></ProjectGif>
+
           <ProjectDescription>
             A simple web page utilising the NASA api to fetch meteorite data
             with the option to filter by any mass.
