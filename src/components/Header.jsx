@@ -1,14 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import {
-  StyledLink,
-  StyledNav,
-  DropdownBtn,
-  Dropdown,
-  DropDownItem,
-  DropDownMenu,
-} from "./Navbar";
+import Navigation from "./Navbar";
 import Switch from "./Switch";
 import SocialMedia from "./Social-Media";
 
@@ -35,33 +28,7 @@ const Header = (props) => {
   console.log(handleToggle);
   return (
     <StyledHeader click={click}>
-      <StyledNav>
-        {/* <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/about">About Me</StyledLink>
-        <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink> */}
-        <Dropdown>
-          <DropdownBtn>
-            <i className="fas fa-bars" onClick={handleToggle}></i>
-          </DropdownBtn>
-          <DropDownMenu toggle={toggle}>
-            <DropDownItem>
-              <StyledLink to="/">Home</StyledLink>
-            </DropDownItem>
-            <DropDownItem>
-              {" "}
-              <StyledLink to="/about">About Me</StyledLink>
-            </DropDownItem>
-            <DropDownItem>
-              {" "}
-              <StyledLink to="/projects">Projects</StyledLink>
-            </DropDownItem>
-            <DropDownItem>
-              <StyledLink to="/contact">Contact</StyledLink>
-            </DropDownItem>
-          </DropDownMenu>
-        </Dropdown>
-      </StyledNav>
+      <Navigation toggle={toggle} handleToggle={handleToggle}></Navigation>
       <Switch handleClick={handleClick}></Switch>
       <SocialMedia></SocialMedia>
     </StyledHeader>
