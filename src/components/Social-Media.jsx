@@ -8,7 +8,7 @@ const SocialMediaBox = styled.div`
   align-items: center;
   justify-content: flex-end;
   @media ${device.mobileS} {
-    width: 55vw;
+    width: 62vw;
     /* border: 1px solid red; */
     /* overflow: hidden; */
   }
