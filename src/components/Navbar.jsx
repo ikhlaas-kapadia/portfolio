@@ -1,4 +1,5 @@
 import { Link } from "@reach/router";
+import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 const StyledNav = styled.nav`
@@ -20,29 +21,36 @@ const Dropdown = styled.div`
   height: 100%;
   width: 100%;
   color: white;
-  /* border: 1px solid yellow; */
 `;
 
 const DropdownBtn = styled.button`
+  /* border: 1px solid yellow; */
   color: white;
   height: 100%;
   width: 100%;
   background-color: transparent;
   font-size: 1.5rem;
   border: none;
+  transform: 
+    ${(props) => {
+      return props.toggle ? "rotate(90deg)" : "none";
+    }};
+  /* transform: rotate(90deg); */
 `;
 
 const DropDownMenu = styled.ul`
+  /* border: 1px solid red; */
   margin: 0;
   list-style: none;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   padding: 0;
-  align-items: space-evenly;
+  align-items: center;
   justify-content: space-evenly;
   width: 100vw;
+  height: 5vh;
   color: black;
+  background-color: #38bacb;
   opacity: ${(props) => {
     return props.toggle ? 1 : 0;
   }};
@@ -55,7 +63,7 @@ const DropDownItem = styled.li``;
 const StyledLink = styled(Link)`
   color: inherit;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 400;
   margin: 0rem 1rem;
   text-decoration: none;
@@ -81,16 +89,44 @@ const StyledLink = styled(Link)`
     transform: scaleX(1);
   }
   @media ${device.mobileS} {
-    background-color: #f0fdff96;
+    /* background-color: #f0fdff96; */
     /* overflow: hidden; */
+    margin: 0;
   }
 `;
 
-export {
-  StyledNav,
-  StyledLink,
-  DropdownBtn,
-  Dropdown,
-  DropDownMenu,
-  DropDownItem,
+const Navigation = (props) => {
+  const { handleToggle, toggle } = props;
+  console.log(toggle);
+  return (
+    <StyledNav>
+      {/* <StyledLink to="/">Home</StyledLink>
+<StyledLink to="/about">About Me</StyledLink>
+<StyledLink to="/projects">Projects</StyledLink>
+<StyledLink to="/contact">Contact</StyledLink> */}
+      <Dropdown>
+        <DropdownBtn toggle={toggle}>
+          <i className="fas fa-bars" onClick={handleToggle}></i>
+        </DropdownBtn>
+        <DropDownMenu toggle={toggle}>
+          <DropDownItem>
+            <StyledLink to="/">Home</StyledLink>
+          </DropDownItem>
+          <DropDownItem>
+            {" "}
+            <StyledLink to="/about">About Me</StyledLink>
+          </DropDownItem>
+          <DropDownItem>
+            {" "}
+            <StyledLink to="/projects">Projects</StyledLink>
+          </DropDownItem>
+          <DropDownItem>
+            <StyledLink to="/contact">Contact</StyledLink>
+          </DropDownItem>
+        </DropDownMenu>
+      </Dropdown>
+    </StyledNav>
+  );
 };
+
+export default Navigation;
