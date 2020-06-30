@@ -2,18 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledMain = styled.main`
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: 0 auto;
-  padding-top: 14vh;
+  padding-top: 8vh;
 `;
 
 const StyledHeading = styled.h1`
   align-self: center;
   font-size: 3.5rem;
   font-weight: normal;
-  margin: 0;
+  margin-bottom: 2%;
 `;
 const StyledSubHeading = styled.h2`
   font-size: 2rem;
@@ -37,8 +38,8 @@ const About = () => {
       <Textbox>
         <StyledSubHeading>Who Am I?</StyledSubHeading>
         <Text>
-          My name is Ikhlaas Kapadia and I'm a Software Developer. If you find
-          my name difficult to pronounce my nickname is Ricky. My past
+          My name is Ikhlaas Kapadia and I'm an aspiring Software Developer. If
+          you find my name difficult to pronounce my nickname is Ricky. My past
           professional experience has been primarily in Supply Chain Management
           and Accounting where I have worked in both FTSE 100 companies and
           small organisations.
@@ -65,8 +66,8 @@ const About = () => {
           {" "}
           After graduating in May 2020, I continue to hone my skills by creating
           mini applications, reviewing diffciult concepts and learning new
-          languages. I'm looking for opportunites where I can fulfill my
-          passion to learn more and hone my coding skills.
+          languages. I'm looking for opportunites where I can fulfill my passion
+          to learn more and hone my coding skills.
         </Text>
       </Textbox>
     </StyledMain>
