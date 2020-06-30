@@ -1,6 +1,5 @@
 .ProjectDemo {
-  border: 1px solid black;
   object-fit: fill;
-  height: 200px;
-  /* width: auto; */
+  height: 50%;
+
 }
