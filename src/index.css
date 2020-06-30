@@ -29,3 +29,9 @@ code {
   font-weight: 700;
   src: local("Open Sans"), url(./fonts/OpenSans-Bold.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Dancing Script";
+  font-weight: 400;
+  src: local("Dancing Script"),
+    url(./fonts/DancingScript-VariableFont_wght.ttf) format("truetype");
+}
