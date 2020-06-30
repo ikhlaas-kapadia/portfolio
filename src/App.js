@@ -7,12 +7,22 @@ import Projects from "./components/Projects";
 
 const App = () => {
   const [click, setClick] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const handleClick = () => {
     setClick(!click);
   };
+  const handleToggle = (e) => {
+    console.log(e);
+    setToggle(!toggle);
+  };
   return (
     <div className="App">
-      <Header handleClick={handleClick} click={click} />
+      <Header
+        handleClick={handleClick}
+        click={click}
+        handleToggle={handleToggle}
+        toggle={toggle}
+      />
       <Router>
         <Main path="/" click={click} />
         <About path="/about" />
