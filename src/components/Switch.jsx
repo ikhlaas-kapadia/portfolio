@@ -44,6 +44,9 @@ left: 0; */
     margin-right: auto;
     margin-top: 20px;
   }
+  @media ${device.mobileM} {
+    margin-top: 30px;
+  }
 `;
 
 const SwitchBox = styled.input`

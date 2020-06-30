@@ -12,7 +12,6 @@ const StyledNav = styled.nav`
 
   @media ${device.mobileS} {
     width: 20vw;
-    /* overflow: hidden; */
     padding-left: 0;
   }
 `;
@@ -31,11 +30,12 @@ const DropdownBtn = styled.button`
   background-color: transparent;
   font-size: 1.5rem;
   border: none;
-  transform: 
-    ${(props) => {
-      return props.toggle ? "rotate(90deg)" : "none";
-    }};
-  /* transform: rotate(90deg); */
+  transform: ${(props) => {
+    return props.toggle ? "rotate(90deg)" : "none";
+  }};
+  @media ${device.mobileM} {
+    font-size: 2rem;
+  }
 `;
 
 const DropDownMenu = styled.ul`
@@ -88,10 +88,8 @@ const StyledLink = styled(Link)`
   &&:hover:before {
     transform: scaleX(1);
   }
-  @media ${device.mobileS} {
-    /* background-color: #f0fdff96; */
-    /* overflow: hidden; */
-    margin: 0;
+  @media ${device.mobileM} {
+    font-size: 1rem;
   }
 `;
 

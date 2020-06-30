@@ -86,6 +86,9 @@ const HeroHeading = styled.h1`
     padding-left: 0;
     text-align: center;
   }
+  @media ${device.mobileM} {
+    font-size: 2.1rem;
+  }
 `;
 
 const HeroText = styled.p`
@@ -105,6 +108,10 @@ const HeroText = styled.p`
     width: 90%;
     line-height: 1.5rem;
     margin-top: 50px;
+  }
+  @media ${device.mobileM} {
+    font-size: 1.1rem;
+    width: 80%;
   }
 `;
 
@@ -136,22 +143,24 @@ const ButtonContainer = styled.div`
   justify-content: center;
   color: white;
   animation: 0.7s ${fadeInButton};
-  
 `;
 
 const ProjectButton = styled(Link)`
-  border: 0.5px solid #00000094;;
+  border: 0.5px solid #00000094;
   width: fit-content;
   padding: 1rem;
   font-size: 0.9rem;
   text-decoration: none;
   color: #adf3ff;
-  background-color: #030303cc;;
+  background-color: #030303cc;
   &:hover {
     background-color: #083942;
   }
   @media ${device.mobileS} {
     font-size: 0.8rem;
+  }
+  @media ${device.mobileM} {
+    font-size: 1rem;
   }
 `;
 

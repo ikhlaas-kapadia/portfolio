@@ -26,6 +26,9 @@ const SocialMediaIcon = styled.a`
   @media ${device.mobileS} {
     font-size: 1.8rem;
   }
+  @media ${device.mobileM} {
+    font-size: 2.4rem;
+  }
 `;
 
 const SocialMedia = () => {
