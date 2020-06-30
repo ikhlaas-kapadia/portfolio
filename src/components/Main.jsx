@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "@reach/router";
 import backgroundImage from "../background-images/coding.jpg";
 import backgroundImage2 from "../background-images/blue.jpg";
+import { device } from "../break-points/device-Sizes";
 
 const theme = { main: backgroundImage2, alternate: backgroundImage };
 const StyledMain = styled.main`
@@ -59,8 +60,12 @@ const HeroBox = styled.section`
   justify-content: center;
   align-items: flex-start;
   color: #1f2833;
-
   animation: 0.7s ${fadeIn};
+  @media ${device.mobileS} {
+    height: 50%;
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;
 
 const HeroHeading = styled.h1`
@@ -75,6 +80,12 @@ const HeroHeading = styled.h1`
   font-family: inherit;
   margin: 0;
   padding-left: 50px;
+  @media ${device.mobileS} {
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-left: 0;
+    text-align: center;
+  }
 `;
 
 const HeroText = styled.p`
@@ -86,6 +97,15 @@ const HeroText = styled.p`
   line-height: 2rem;
   /* background-color: black; */
   padding-left: 50px;
+  @media ${device.mobileS} {
+    font-size: 1rem;
+    padding-left: 0;
+    /* padding-right: 10px; */
+    text-align: center;
+    width: 90%;
+    line-height: 1.5rem;
+    margin-top: 50px;
+  }
 `;
 
 const fadeInButton = keyframes`
@@ -116,18 +136,22 @@ const ButtonContainer = styled.div`
   justify-content: center;
   color: white;
   animation: 0.7s ${fadeInButton};
+  
 `;
 
 const ProjectButton = styled(Link)`
-  border: 0.5px solid whitesmoke;
+  border: 0.5px solid #00000094;;
   width: fit-content;
   padding: 1rem;
   font-size: 0.9rem;
   text-decoration: none;
-  color: inherit;
-  background-color: #000000c7;
+  color: #adf3ff;
+  background-color: #030303cc;;
   &:hover {
     background-color: #083942;
+  }
+  @media ${device.mobileS} {
+    font-size: 0.8rem;
   }
 `;
 
