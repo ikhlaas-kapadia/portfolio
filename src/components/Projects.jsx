@@ -2,56 +2,85 @@ import React from "react";
 import styled from "styled-components";
 import { StyledMain, StyledHeading } from "./About";
 
-
 import demo from "../videos/demo1.mp4";
-// import demo from "../videos/demo.mp4";
+import hubertImage from "../images/hubert.jpg";
 
 import styles from "../Projects.module.css";
 
-const ProjectsContainer = styled.main`
+const ProjectsContainer = styled.section`
+  /* border: 1px solid red; */
   display: flex;
-  align-content: flex-start;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
   flex-wrap: wrap;
 `;
 
 const IndividualProject = styled.article`
+  width: 45%;
+  height: 28rem;
   display: flex;
   flex-direction: column;
-  width: 40%;
-  border: 1px solid green;
-  margin: 1rem;
-  padding: 1rem;
-  min-width: 300px;
-  max-width: 350px;
-  min-height: 400px;
-  background-color: #b3b3b31c;
+  background-color: #ffb03a;
   color: #0d0d0d;
   border: 2px solid black;
   border-radius: 5%;
-`;
-
-const ProjectDescription = styled.p`
-  /* border: 1px solid red; */
-  font-size: 1rem;
-  font-weight: regular;
-  margin: 0;
-  display: inline-flex;
-  flex-direction: column;
-  align-content: flex-end;
-  justify-content: flex-end;
-  border: 1px solid red;
-  height: 100%;
+  margin: 2%;
 `;
 
 const ProjectTitle = styled.h2`
-  /* border: 1px solid red; */
   font-size: 2rem;
   font-weight: bold;
+  margin: 1% 0 1% 0;
+  text-align: center;
+`;
+const ProjectDescription = styled.p`
+  padding: 3% 3% 0 3%;
+  font-size: 0.8rem;
+  font-weight: regular;
   margin: 0;
+  text-align: justify;
 `;
 
-const Button = styled.a``;
+const ProjectLinksContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const ProjectLinkBox = styled.a`
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+  width: 30%;
+  height: 70%;
+  border-radius: 4%;
+  font-size: 1rem;
+  background-color: #ffc773;
+  color: #0d0d0d;
+
+  &&:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+`;
+const ProjectLinkText = styled.span`
+  padding-top: 7%;
+  text-align: center;
+  height: 100%;
+  display: block;
+  /* border: 1px solid red; */
+`;
+const ProjectImage = styled.img.attrs((props) => ({ src: hubertImage }))`
+  border: 1px solid red;
+  height: 50%;
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: grey;
+`;
 
 const Projects = () => {
   return (
@@ -74,10 +103,21 @@ const Projects = () => {
             Tech Stack: JavaScript, React, PostgreSQL, Knex, Axios, Express,
             Node JS, Reach Router, Moment.
           </ProjectDescription>
+          <ProjectLinksContainer>
+            <ProjectLinkBox
+              href="https://www.youtube.com/watch?v=wi_zpSYNBdw"
+              target="_blank"
+            >
+              <ProjectLinkText>Live Site</ProjectLinkText>
+            </ProjectLinkBox>
+            <ProjectLinkBox>
+              <ProjectLinkText>Code</ProjectLinkText>
+            </ProjectLinkBox>
+          </ProjectLinksContainer>
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Hubert</ProjectTitle>
-
+          <ProjectImage></ProjectImage>
           <ProjectDescription>
             A full stack cross platform hide and seek game for mobile. Users can
             create an account, create a lobby and play with other players. The
@@ -92,7 +132,6 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Portfolio Site</ProjectTitle>
-
           <ProjectDescription>
             My Portfolio page showcasing my projects and skills.
             <br></br>
@@ -114,7 +153,6 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Meteorite Visualisation App</ProjectTitle>
-
           <ProjectDescription>
             A simple web page utilising the NASA api to fetch meteorite data
             with the option to filter by any mass.
