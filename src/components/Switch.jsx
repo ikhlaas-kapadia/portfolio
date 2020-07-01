@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 
 const SwitchBoxLabel = styled.label`
+  align-self: center;
   position: absolute;
   z-index: 100;
-  margin-top: 20%;
+  /* margin-top: 1000px; */
+  margin-left: 50%;
   width: 42px;
   height: 20px;
   border-radius: 15px;
@@ -49,8 +51,15 @@ const SwitchBox = styled.input`
 `;
 const SwitchContainer = styled.div`
   position: relative;
-  width: 30vw;
-  /* border: 1px solid yellow; */
+  width: 40vw;
+  /* text-align: center; */
+  display: flex;
+  @media ${device.tablet} {
+    width: 60vw;
+  }
+  @media ${device.laptop} {
+    width: 25vw;
+  }
 `;
 
 const Switch = (props) => {

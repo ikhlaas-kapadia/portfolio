@@ -1,5 +1,5 @@
 import React from "react";
-
+import { device } from "../break-points/device-Sizes";
 import styled from "styled-components";
 import backgroundImage from "../background-images/coding.jpg";
 import backgroundImage2 from "../background-images/blue.jpg";
@@ -14,6 +14,11 @@ const StyledMain = styled.main`
   width: 100vw;
   max-height: 90vh;
   max-width: 100vw;
+  @media ${device.tablet} {
+    margin-top: 7vh;
+    height: 93vh;
+    max-height: 93vh;
+  }
 
   background-image: ${(props) => {
     return props.click

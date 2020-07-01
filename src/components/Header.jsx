@@ -1,5 +1,5 @@
 import React from "react";
-
+import { device } from "../break-points/device-Sizes";
 import styled from "styled-components";
 import Navigation from "./Navbar";
 import Switch from "./Switch";
@@ -20,6 +20,10 @@ const StyledHeader = styled.header`
     return props.click ? "#030303" : "#ffff";
   }};
   display: flex;
+
+  @media ${device.tablet} {
+    height: 7vh;
+  }
 `;
 
 const Header = (props) => {
