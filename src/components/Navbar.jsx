@@ -4,19 +4,16 @@ import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 const StyledNav = styled.nav`
   display: flex;
-  width: 40vw;
+  width: 20vw;
   height: 100%;
-  align-items: center;
-  /* border: 3px solid purple; */
-  padding-left: 30px;
-
-  @media ${device.mobileS} {
-    width: 20vw;
-    padding-left: 0;
-  }
+  /* border: 4px solid purple; */
 `;
-
-const Dropdown = styled.div`
+const NormalNav = styled.div`
+  height: 100%;
+  width: 100%;
+  display: none;
+`;
+const DropDownNav = styled.div`
   height: 100%;
   width: 100%;
   color: white;
@@ -24,7 +21,9 @@ const Dropdown = styled.div`
 
 const DropdownBtn = styled.button`
   /* border: 1px solid yellow; */
-  color: white;
+  color: ${(props) => {
+    return props.toggle ? "#2682a8" : "white";
+  }};
   height: 100%;
   width: 100%;
   background-color: transparent;
@@ -33,14 +32,11 @@ const DropdownBtn = styled.button`
   transform: ${(props) => {
     return props.toggle ? "rotate(90deg)" : "none";
   }};
-  @media ${device.mobileM} {
-    font-size: 2rem;
-  }
+  transition: 0.2s ease-in;
 `;
 
 const DropDownMenu = styled.ul`
   /* border: 1px solid red; */
-  margin: 0;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -57,6 +53,7 @@ const DropDownMenu = styled.ul`
   pointer-events: ${(props) => {
     return props.toggle ? "all" : "none";
   }};
+  transition: 0.2s ease-in;
 `;
 const DropDownItem = styled.li``;
 
@@ -65,11 +62,8 @@ const StyledLink = styled(Link)`
   text-align: center;
   font-size: 0.8rem;
   font-weight: 400;
-  margin: 0rem 1rem;
   text-decoration: none;
-  letter-spacing: 0.1rem;
-  /* border: 1px solid red; */
-  height: fit-content;
+  height: 100%;
   width: 80px;
 
   &&:after,
@@ -88,21 +82,27 @@ const StyledLink = styled(Link)`
   &&:hover:before {
     transform: scaleX(1);
   }
-  @media ${device.mobileM} {
+  /* @media ${device.mobileM} {
     font-size: 1rem;
   }
+  @media ${device.tablet} {
+    font-size: 1.5rem;
+  } */
 `;
 
 const Navigation = (props) => {
   const { handleToggle, toggle } = props;
-  console.log(toggle);
+
+  console.log(window.innerWidth);
   return (
     <StyledNav>
-      {/* <StyledLink to="/">Home</StyledLink>
-<StyledLink to="/about">About Me</StyledLink>
-<StyledLink to="/projects">Projects</StyledLink>
-<StyledLink to="/contact">Contact</StyledLink> */}
-      <Dropdown>
+      <NormalNav>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/about">About Me</StyledLink>
+        <StyledLink to="/projects">Projects</StyledLink>
+        <StyledLink to="/contact">Contact</StyledLink>
+      </NormalNav>
+      <DropDownNav>
         <DropdownBtn toggle={toggle}>
           <i className="fas fa-bars" onClick={handleToggle}></i>
         </DropdownBtn>
@@ -122,7 +122,7 @@ const Navigation = (props) => {
             <StyledLink to="/contact">Contact</StyledLink>
           </DropDownItem>
         </DropDownMenu>
-      </Dropdown>
+      </DropDownNav>
     </StyledNav>
   );
 };
