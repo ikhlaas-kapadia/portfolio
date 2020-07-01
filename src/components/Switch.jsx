@@ -1,26 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
-// const SwitchBoxWrapper = styled.div`
-//   /* border: 1px solid white; */
-//   position: relative;
-//   text-align: center;
-//   width: 5vw;
-//   padding-top: 20px;
-
-//   /* height: 100%; */
-//   /* margin-top: 20px; */
-//   @media ${device.mobileS} {
-//     width: 20vw;
-//     /* border: 1px solid red; */
-//     /* overflow: hidden; */
-//   }
-// `;
 
 const SwitchBoxLabel = styled.label`
-  position: fixed;
-  /* top: 0;
-left: 0; */
+  position: absolute;
+  z-index: 100;
+  margin-top: 20%;
   width: 42px;
   height: 20px;
   border-radius: 15px;
@@ -36,16 +21,6 @@ left: 0; */
     background: black;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
     transition: 0.2s;
-  }
-  @media ${device.mobileS} {
-    right: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-  }
-  @media ${device.mobileM} {
-    margin-top: 30px;
   }
 `;
 
@@ -72,14 +47,19 @@ const SwitchBox = styled.input`
     }
   }
 `;
+const SwitchContainer = styled.div`
+  position: relative;
+  width: 30vw;
+  /* border: 1px solid yellow; */
+`;
 
 const Switch = (props) => {
   const { handleClick } = props;
   return (
-    <>
+    <SwitchContainer>
       <SwitchBox id="checkbox" type="checkbox" onClick={handleClick} />
       <SwitchBoxLabel htmlFor="checkbox" />
-    </>
+    </SwitchContainer>
   );
 };
 
