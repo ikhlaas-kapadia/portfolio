@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 import backgroundImage2 from "../background-images/blue.jpg";
 const StyledMain = styled.main`
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* background-image: inherit; */
   /* background-color: #d0faff; */
   /* background-color: #d0faff; */
@@ -15,7 +15,8 @@ const StyledMain = styled.main`
   width: 100vw;
   margin-top: 10vh;
 
-  @media ${device.mobileM} {
+  @media ${device.tablet} {
+    margin-top: 5vh;
   }
 `;
 
@@ -24,12 +25,26 @@ const StyledHeading = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 6%;
+  @media ${device.tablet} {
+    margin-bottom: 4%;
+  }
+  @media ${device.laptop} {
+    margin-bottom: 2%;
+    font-size: 3.5rem;
+    margin-top: 5%;
+  }
 `;
 const StyledSubHeading = styled.h2`
   font-size: 0.9rem;
   font-weight: bold;
   margin-bottom: 2%;
   text-align: center;
+  @media ${device.tablet} {
+    margin-bottom: 1%;
+  }
+  @media ${device.laptop} {
+    font-size: 2rem;
+  }
 `;
 
 const Textbox = styled.section`
@@ -44,6 +59,18 @@ const Textbox = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${device.tablet} {
+    padding: 2%;
+    height: 2%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 70%;
+    margin: 1.5% auto;
+  }
+  @media ${device.laptop} {
+    padding-top: 1.5%;
+    margin: 0.5% auto;
+  }
 `;
 
 const Text = styled.p`
@@ -51,6 +78,10 @@ const Text = styled.p`
   line-height: 1.2rem;
   margin-top: 0.2rem;
   font-size: 0.8rem;
+  @media ${device.laptop} {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 const About = () => {
