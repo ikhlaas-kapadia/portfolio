@@ -11,7 +11,7 @@ const SwitchBoxLabel = styled.label`
   width: 42px;
   height: 20px;
   border-radius: 15px;
-  background: #38bacb;
+  background: #6eeeff;
   cursor: pointer;
   &::after {
     content: "";
