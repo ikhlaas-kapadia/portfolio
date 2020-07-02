@@ -22,8 +22,8 @@ const SocialMediaIcon = styled.a`
   transition: all 250ms ease-in-out;
   &:hover {
     cursor: pointer;
-    color: #2682a8;
-    transform: scale(1.3);
+    color: #6eeeff;
+    transform: scale(1.2);
   }
 
   @media ${device.mobileM} {
@@ -31,6 +31,9 @@ const SocialMediaIcon = styled.a`
   }
   @media ${device.tablet} {
     font-size: 1.5rem;
+  }
+  @media ${device.laptop} {
+    font-size: 1.7rem;
   }
 
 `;

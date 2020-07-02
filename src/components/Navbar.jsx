@@ -96,7 +96,7 @@ const StyledLink = styled(Link)`
   &&:before {
     display: block;
     content: "";
-    border-bottom: solid 1px #2682a8;
+    border-bottom: solid 1px #6eeeff;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
@@ -111,7 +111,7 @@ const StyledLink = styled(Link)`
 
   @media ${device.laptop} {
     /* border: 1px solid yellow; */
-    font-size: 0.9rem;
+    font-size: 1rem;
     height: fit-content;
     align-self: center;
     text-align: none;
