@@ -50,7 +50,7 @@ const StyledSubHeading = styled.h2`
 const Textbox = styled.section`
   /* border: 1px solid red; */
   /* background-color: #a7f5ff; */
-  background-color: #d0faff;
+  background-color: #dffbff;
   width: 90%;
   margin: 2% auto;
   padding: 5%;
@@ -90,7 +90,10 @@ const About = () => {
       <StyledHeading>About Me</StyledHeading>
       <Textbox>
         <StyledSubHeading>Tech Stack</StyledSubHeading>
-        <Text>JavaScript, PostgreSQL, Node.js, React.js, Express.js</Text>
+        <Text>
+          JavaScript, PostgreSQL,Knex, Node.js, React.js, Express.js,
+          Reach-Router, Axios, React Styled Components.
+        </Text>
       </Textbox>
       <Textbox>
         <StyledSubHeading>Who Am I?</StyledSubHeading>
