@@ -8,58 +8,71 @@ import hubertImage from "../images/hubert.jpg";
 import styles from "../Projects.module.css";
 
 const ProjectsContainer = styled.section`
-  /* border: 1px solid red; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  flex-wrap: wrap;
+  height: fit-content;
+  /* flex-wrap: wrap;  */
 `;
 
 const IndividualProject = styled.article`
-  width: 45%;
-  height: 28rem;
+  width: 90%;
+  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  background-color: #ffb03a;
+  background-color: #c7f8ff;
   color: #0d0d0d;
   border: 2px solid black;
   border-radius: 5%;
-  margin: 2%;
+  margin: 2% auto;
 `;
 
 const ProjectTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 1% 0 1% 0;
+  margin-top: 2%;
+  margin-bottom: 4%;
   text-align: center;
+  height: 10%;
 `;
 const ProjectDescription = styled.p`
+  /* border: 1px solid red; */
   padding: 3% 3% 0 3%;
   font-size: 0.8rem;
   font-weight: regular;
-  margin: 0;
   text-align: justify;
+  height: 30%;
 `;
 
 const ProjectLinksContainer = styled.div`
+  /* border: 1px solid red; */
   height: 100%;
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-bottom: 5%;
 `;
 
 const ProjectLinkBox = styled.a`
   text-decoration: none;
-  display: block;
   border: 1px solid black;
-  width: 30%;
-  height: 70%;
+  min-width: 40%;
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   border-radius: 4%;
-  font-size: 1rem;
-  background-color: #ffc773;
-  color: #0d0d0d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 2%;
 
   &&:hover {
     transform: scale(1.1);
@@ -67,16 +80,32 @@ const ProjectLinkBox = styled.a`
   }
 `;
 const ProjectLinkText = styled.span`
-  padding-top: 7%;
-  text-align: center;
-  height: 100%;
   display: block;
-  /* border: 1px solid red; */
+  margin: 0 auto;
+  height: 90%;
+  width: 100%;
+  text-align: center;
+  /* border: 1px solid blue; */
+`;
+
+const StyledSpan = styled.span`
+  text-decoration: underline;
 `;
 const ProjectImage = styled.img.attrs((props) => ({ src: hubertImage }))`
-  border: 1px solid red;
-  height: 50%;
+  /* border: 1px solid red; */
+  height: 150px;
+  object-fit: fill;
   width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: grey;
+`;
+const ProjectVideo = styled.video`
+  /* border: 1px solid red; */
+  min-height: 150px;
+  object-fit: fill;
+  /* height: 60%; */
+  width: 100%;
   text-align: center;
   margin: 0 auto;
   background-color: grey;
@@ -89,29 +118,43 @@ const Projects = () => {
       <ProjectsContainer>
         <IndividualProject>
           <ProjectTitle>NC News</ProjectTitle>
-          <video className={styles.ProjectDemo} loop autoplay="true">
-            {" "}
+          <ProjectVideo loop autoplay="true">
             <source src={demo} type="video/mp4"></source>
-          </video>
+          </ProjectVideo>
           <ProjectDescription>
             A full stack Reddit style web application. Allows visitors to view
             articles and filter by topic author and other criteria. The backend
             comprises of a RESTful API server created using TDD which serves
-            articles by authors. The front end was created using React.
+            articles by authors.
             <br></br>
             <br></br>
-            Tech Stack: JavaScript, React, PostgreSQL, Knex, Axios, Express,
-            Node JS, Reach Router, Moment.
+            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React, PostgreSQL,
+            Knex, Axios, Express, Node JS, Reach Router, Moment.
           </ProjectDescription>
           <ProjectLinksContainer>
             <ProjectLinkBox
-              href="https://www.youtube.com/watch?v=wi_zpSYNBdw"
+              href="https://ikhlaas-nc-news.netlify.app/"
               target="_blank"
             >
-              <ProjectLinkText>Live Site</ProjectLinkText>
+              <ProjectLinkText> FE Live Site </ProjectLinkText>
             </ProjectLinkBox>
-            <ProjectLinkBox>
-              <ProjectLinkText>Code</ProjectLinkText>
+            <ProjectLinkBox
+              href="https://github.com/ikhlaas-kapadia/nc-news"
+              target="_blank"
+            >
+              <ProjectLinkText> FE Code</ProjectLinkText>
+            </ProjectLinkBox>
+            <ProjectLinkBox
+              href="https://news-app-ikhlaas.herokuapp.com/api"
+              target="_blank"
+            >
+              <ProjectLinkText>BE Live Site</ProjectLinkText>
+            </ProjectLinkBox>
+            <ProjectLinkBox
+              href="https://github.com/ikhlaas-kapadia/nc_news_backend"
+              target="_blank"
+            >
+              <ProjectLinkText>BE Code</ProjectLinkText>
             </ProjectLinkBox>
           </ProjectLinksContainer>
         </IndividualProject>
@@ -122,44 +165,44 @@ const Projects = () => {
             A full stack cross platform hide and seek game for mobile. Users can
             create an account, create a lobby and play with other players. The
             app uses live google map tracking enabling the hider to see the
-            seeker in real time. The backend was created using MongoDB and the
-            front end with Flutter.
+            seeker in real time.
             <br></br>
             <br></br>
             Tech Stack: JavaScript, Flutter, Dart Socket.IO, Express JS, Node
             JS, MongoDB, Mongoose, BCrypt Hash, JWT.
           </ProjectDescription>
+          <ProjectLinksContainer>
+            <ProjectLinkBox
+              href="https://www.youtube.com/watch?v=wi_zpSYNBdw"
+              target="_blank"
+            >
+              <ProjectLinkText>Demo Video</ProjectLinkText>
+            </ProjectLinkBox>
+          </ProjectLinksContainer>
+        </IndividualProject>
+
+        <IndividualProject>
+          <ProjectTitle>Noughts And Crosses</ProjectTitle>
+          <ProjectDescription>
+            A fun front end Noughts and Crosses game where two players can play
+            against each other or single player mode against a bot. Players can
+            change names, customise X / O symbol and select a range of board
+            sizes. The board sizes and winning sequences were calculated
+            programmatically.
+            <br></br>
+            <br></br>
+            Tech Stack: JavaScript, React
+          </ProjectDescription>
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Portfolio Site</ProjectTitle>
           <ProjectDescription>
-            My Portfolio page showcasing my projects and skills.
+            My Portfolio page showcasing my projects and skills. The page allows
+            viewers to switch between two colour schemes.
             <br></br>
             <br></br>
-            Tech Stack: React.js, React Styled Components, Reach Router and
+            Tech Stack: React, React Styled Components, Reach Router and
             HTML/CSS.
-          </ProjectDescription>
-        </IndividualProject>
-        <IndividualProject>
-          <ProjectTitle>Noughts And Crosses</ProjectTitle>
-          <ProjectDescription>
-            My Portfolio page created using React.js, React Styled Components,
-            Reach Router and HTML/CSS.
-            <br></br>
-            <br></br>
-            Tech Stack: JavaScript, React, PostgreSQL, Knex, Axios, Express,
-            Node JS, Reach Router, Moment.
-          </ProjectDescription>
-        </IndividualProject>
-        <IndividualProject>
-          <ProjectTitle>Meteorite Visualisation App</ProjectTitle>
-          <ProjectDescription>
-            A simple web page utilising the NASA api to fetch meteorite data
-            with the option to filter by any mass.
-            <br></br>
-            <br></br>
-            Tech Stack: JavaScript, React, Axios, Express, Node JS, Reach
-            Router, React Styled-Components, CSS Modules
           </ProjectDescription>
         </IndividualProject>
       </ProjectsContainer>
