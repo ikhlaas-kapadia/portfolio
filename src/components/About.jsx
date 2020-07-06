@@ -18,6 +18,9 @@ const StyledMain = styled.main`
   @media ${device.tablet} {
     margin-top: 5vh;
   }
+  @media ${device.laptop} {
+    margin-top: 2vh;
+  }
 `;
 
 const StyledHeading = styled.h1`
@@ -29,7 +32,7 @@ const StyledHeading = styled.h1`
     margin-bottom: 4%;
   }
   @media ${device.laptop} {
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     font-size: 3.5rem;
     margin-top: 5%;
   }
@@ -91,7 +94,7 @@ const About = () => {
       <Textbox>
         <StyledSubHeading>Tech Stack</StyledSubHeading>
         <Text>
-          JavaScript, PostgreSQL,Knex, Node.js, React.js, Express.js,
+          JavaScript, PostgreSQL, Node.js, React.js, Express.js,
           Reach-Router, Axios, React Styled Components.
         </Text>
       </Textbox>
