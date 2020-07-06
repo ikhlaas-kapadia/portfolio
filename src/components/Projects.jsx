@@ -15,15 +15,19 @@ const ProjectsContainer = styled.section`
   width: 100%;
   height: fit-content;
   /* flex-wrap: wrap;  */
+  @media ${device.laptop} {
+    flex-direction: row;
+    /* align-items: space-between; */
+    flex-wrap: wrap;
+  }
 `;
 
 const IndividualProject = styled.article`
   position: relative;
   width: 90%;
-  min-height: 430px;
-  max-height: 430px;
+  min-height: 440px;
+  max-height: 440px;
   height: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,11 +35,17 @@ const IndividualProject = styled.article`
   color: #0d0d0d;
   border: 1px solid black;
   border-radius: 5%;
-  margin: 2% auto;
+  margin: 3% auto;
   @media ${device.tablet} {
     width: 80%;
-    min-height: 700px;
-    max-height: none; 
+    min-height: 650px;
+    max-height: none;
+  }
+  @media ${device.laptop} {
+    width: 40%;
+    min-height: 550px;
+    max-height: none;
+    margin: 1%;
   }
 `;
 
@@ -55,7 +65,7 @@ const ProjectDescription = styled.p`
   text-align: justify;
   height: 30%;
   @media ${device.tablet} {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 const TechDescription = styled.p`
@@ -65,7 +75,7 @@ const TechDescription = styled.p`
   text-align: left;
   height: 30%;
   @media ${device.tablet} {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -81,7 +91,7 @@ const ProjectLinksContainer = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   /* margin-top: 15%; */
-  /* margin-bottom: 5%; */
+  margin-top: 1%;
 `;
 
 const ProjectLinkBox = styled.a`
@@ -99,12 +109,15 @@ const ProjectLinkBox = styled.a`
   margin: 1%;
 
   &&:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
-    opacity: 0.75;
+    opacity: 0.95;
   }
   @media ${device.tablet} {
-    font-size: 1rem;
+    /* font-size: 0.7rem; */
+  }
+  @media ${device.laptop} {
+    font-size: 0.7rem;
   }
 `;
 const ProjectLinkText = styled.span`
@@ -120,28 +133,29 @@ const StyledSpan = styled.span`
   text-decoration: underline;
 `;
 const ProjectImage = styled.img`
-  display: inline-block;
-  object-fit: fill;
-  /* border: 1px solid red; */
-  max-height: 150px;
+  display: block;
   width: 30%;
   margin: 0 auto;
   background-color: black;
   border: 1px solid black;
   @media ${device.tablet} {
-    max-height: 350px;
+    max-height: 300px;
     width: 30%;
+  }
+  @media ${device.laptop} {
+    height: 260px;
   }
 `;
 const ProjectVideo = styled.video`
-  /* border: 1px solid red; */
-  min-height: 20%;
   object-fit: fill;
-  /* height: 60%; */
+  display: block;
   width: 95%;
   text-align: center;
   margin: 0 auto;
   background-color: grey;
+  @media ${device.laptop} {
+    height: 260px;
+  }
 `;
 
 const Projects = () => {
@@ -171,7 +185,7 @@ const Projects = () => {
               href="https://ikhlaas-nc-news.netlify.app/"
               target="_blank"
             >
-              <ProjectLinkText> FE Live Site </ProjectLinkText>
+              <ProjectLinkText>Live Site </ProjectLinkText>
             </ProjectLinkBox>
             <ProjectLinkBox
               href="https://github.com/ikhlaas-kapadia/nc-news"
