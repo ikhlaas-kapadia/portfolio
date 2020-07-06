@@ -24,29 +24,30 @@ const StyledMain = styled.main`
 `;
 
 const StyledHeading = styled.h1`
-  margin-top: 10%;
+  margin-top: 3%;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 6%;
+  margin-bottom: 3%;
   @media ${device.tablet} {
-    margin-bottom: 4%;
+    margin-top: 4vh;
+    margin-bottom: 1vh;
   }
   @media ${device.laptop} {
-    margin-bottom: 1%;
-    font-size: 3.5rem;
-    margin-top: 5%;
+    font-size: 2.5rem;
+    margin-bottom: 2vh;
+    margin-top: 7vh;
   }
 `;
 const StyledSubHeading = styled.h2`
   font-size: 0.9rem;
   font-weight: bold;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
   text-align: center;
-  @media ${device.tablet} {
+  /* @media ${device.tablet} {
     margin-bottom: 1%;
-  }
+  } */
   @media ${device.laptop} {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -55,15 +56,18 @@ const Textbox = styled.section`
   /* background-color: #a7f5ff; */
   background-color: #dffbff;
   width: 90%;
-  margin: 2% auto;
-  padding: 5%;
+  margin: 1% auto;
+  padding: 3% 4%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media ${device.mobileL} {
+    width: 80%;
+  }
   @media ${device.tablet} {
-    padding: 2%;
+    padding: 2% 4%;
     height: 2%;
     align-items: flex-start;
     justify-content: flex-start;
@@ -71,7 +75,7 @@ const Textbox = styled.section`
     margin: 1.5% auto;
   }
   @media ${device.laptop} {
-    padding-top: 1.5%;
+    /* padding-top: 1.5%; */
     margin: 0.5% auto;
   }
 `;
@@ -82,7 +86,7 @@ const Text = styled.p`
   margin-top: 0.2rem;
   font-size: 0.8rem;
   @media ${device.laptop} {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
   }
 `;
@@ -94,8 +98,8 @@ const About = () => {
       <Textbox>
         <StyledSubHeading>Tech Stack</StyledSubHeading>
         <Text>
-          JavaScript, PostgreSQL, Node.js, React.js, Express.js,
-          Reach-Router, Axios, React Styled Components.
+          JavaScript, PostgreSQL, Node.js, React.js, Express.js, Reach-Router,
+          Axios, React Styled Components.
         </Text>
       </Textbox>
       <Textbox>
