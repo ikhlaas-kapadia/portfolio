@@ -4,7 +4,7 @@ import { StyledMain, StyledHeading } from "./About";
 import { device } from "../break-points/device-Sizes";
 const FormContainer = styled.form`
   height: auto;
-  width: 80vw;
+  width: 85vw;
   background-color: #dffbff;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ const FormContainer = styled.form`
   border-radius: 20px;
   font-size: 0.85rem;
   padding-top: 5%;
-  padding-bottom: 7%;
+  padding-bottom: 1%;
   @media ${device.tablet} {
     font-size: 1rem;
     width: 50vw;
@@ -24,12 +24,16 @@ const FormContainer = styled.form`
     padding-bottom: 2%;
     align-items: flex-start;
     padding-left: 5%;
+    font-size: 0.8rem;
   }
 `;
 
 const InputContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 3%;
+  @media ${device.laptop} {
+    margin: 1%;
+  }
 `;
 const InputField = styled.input`
   outline: none;
@@ -45,14 +49,16 @@ const InputField = styled.input`
 const MessageContainer = styled.div`
   box-sizing: border-box;
   height: auto;
-  width: 80%;
+  width: 90%;
   /* border: 1px solid red; */
   margin: 3%;
-
+  @media ${device.laptop} {
+    margin: 1%;
+  }
   /* padding: 7px; */
 `;
 const ButtonContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 3%;
   text-align: center;
 `;
@@ -68,6 +74,36 @@ const SubmitButton = styled.button`
   &&:hover {
     background-color: #b0e9f1;
     cursor: pointer;
+  }
+`;
+
+const ContactContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1%;
+  @media ${device.laptop} {
+    margin: 0;
+  }
+`;
+
+const ContactInfo = styled.a`
+  /* border: 1px solid red; */
+  line-height: 0.4rem;
+  display: block;
+  margin: 3%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #030303;
+  &&:hover {
+    cursor: pointer;
+  }
+  > span {
+    font-size: 0.8rem;
+    padding-bottom: 50%;
+  } 
+  @media ${device.laptop} {
+    margin: 1%;
   }
 `;
 
@@ -124,6 +160,26 @@ const ContactPage = (props) => {
         <ButtonContainer>
           <SubmitButton type="submit">Send Message</SubmitButton>
         </ButtonContainer>
+        <ContactContainer>
+          <ContactInfo
+            href="https://linkedin.com/in/ikhlaas-kapadia"
+            target="_blank"
+          >
+            <i className="fab fa-linkedin"></i>
+            <span> - www.linkedin.com/in/ikhlaas-kapadia</span>
+          </ContactInfo>
+          <ContactInfo
+            href="https://github.com/ikhlaas-kapadia"
+            target="_blank"
+          >
+            <i className="fab fa-github"></i>
+            <span> - www.github.com/ikhlaas-kapadia</span>
+          </ContactInfo>
+          <ContactInfo href="mailto:ikhlaas.ka@gmail.com">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <span> - ikhlaas.kapadia@gmail.com</span>
+          </ContactInfo>
+        </ContactContainer>
       </FormContainer>
     </StyledMain>
   );
