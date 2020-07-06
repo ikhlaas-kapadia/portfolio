@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import { About } from "./components/About";
 import Projects from "./components/Projects";
 import "./App.css";
+import ContactPage from "./components/Contact";
 
 const App = () => {
   const [click, setClick] = useState(false);
@@ -28,6 +29,7 @@ const App = () => {
         <Main path="/" click={click} />
         <About path="/about" />
         <Projects path="/projects" />
+        <ContactPage path="contact"></ContactPage>
       </Router>
     </div>
   );
