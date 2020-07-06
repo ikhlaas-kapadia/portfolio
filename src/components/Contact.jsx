@@ -101,7 +101,7 @@ const ContactInfo = styled.a`
   > span {
     font-size: 0.8rem;
     padding-bottom: 50%;
-  } 
+  }
   @media ${device.laptop} {
     margin: 1%;
   }
