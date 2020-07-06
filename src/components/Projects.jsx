@@ -165,7 +165,7 @@ const Projects = () => {
       <ProjectsContainer>
         <IndividualProject>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectVideo loop autoplay="true">
+          <ProjectVideo loop autoPlay controls>
             <source src={demo} type="video/mp4"></source>
           </ProjectVideo>
           <ProjectDescription>
