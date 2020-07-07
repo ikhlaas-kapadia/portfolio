@@ -43,9 +43,9 @@ const StyledSubHeading = styled.h2`
   font-weight: bold;
   margin-bottom: 1%;
   text-align: center;
-  /* @media ${device.tablet} {
-    margin-bottom: 1%;
-  } */
+  @media ${device.tablet} {
+    font-size: 1.3rem;
+  }
   @media ${device.laptop} {
     font-size: 1.4rem;
   }
@@ -72,10 +72,6 @@ const Textbox = styled.section`
     align-items: flex-start;
     justify-content: flex-start;
     width: 70%;
-    margin: 1.5% auto;
-  }
-  @media ${device.laptop} {
-    /* padding-top: 1.5%; */
     margin: 0.5% auto;
   }
 `;
@@ -85,7 +81,7 @@ const Text = styled.p`
   line-height: 1.2rem;
   margin-top: 0.2rem;
   font-size: 0.8rem;
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
