@@ -3,12 +3,9 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "@reach/router";
 import { device } from "../break-points/device-Sizes";
 
-const FadeIn = keyframes`from{margin-top: -700px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
-
-const FadeIn756 = keyframes`from{margin-top: -1000px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
-
 const HeroBox = styled.section`
   /* border: 1px solid red; */
+  min-height: 310px;
   height: 70%;
   width: 100%;
   display: flex;
@@ -16,10 +13,6 @@ const HeroBox = styled.section`
   justify-content: center;
   align-items: center;
   color: #1f2833;
-  animation: ${FadeIn} 1s linear normal;
-  @media ${device.tablet} {
-    animation: ${FadeIn756} 1.4s linear normal;
-  }
 `;
 
 const HeroHeading = styled.h1`
@@ -32,7 +25,7 @@ const HeroHeading = styled.h1`
   margin-bottom: 20px;
   color: black;
   @media ${device.mobileM} {
-    font-size: 2.3rem;
+    /* font-size: 2.3rem; */
   }
   @media ${device.tablet} {
     font-size: 2.5rem;
@@ -46,15 +39,15 @@ const HeroText = styled.p`
   /* border-right: 1px solid red; */
   width: 80%;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5rem;
-  @media ${device.mobileM} {
-    font-size: 1.1rem;
-  }
+
   @media ${device.tablet} {
-    font-size: 1.3rem;
-    line-height: 2rem;
     padding-right: 10%;
+    font-size: 0.9rem;
+  }
+  @media ${device.laptop} {
+    font-size: 1rem;
   }
 `;
 

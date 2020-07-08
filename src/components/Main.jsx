@@ -1,23 +1,27 @@
 import React from "react";
 import { device } from "../break-points/device-Sizes";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import backgroundImage from "../background-images/coding.jpg";
 import backgroundImage2 from "../background-images/blue.jpg";
 import HeroSection from "./HeroSection";
 
 const theme = { main: backgroundImage2, alternate: backgroundImage };
 
+const FadeIn = keyframes`from{margin-top: -700px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
+
+const FadeIn756 = keyframes`from{margin-top: -1500px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
 const StyledMain = styled.main`
-  margin-top: 10vh;
-  /* border: 1px solid black; */
-  height: 90vh;
+  margin-top: 50px;
+  border: 1px solid black;
+  height: calc(100vh - 50px);
   width: 100vw;
-  max-height: 90vh;
-  max-width: 100vw;
+  animation: ${FadeIn} 0.8s linear normal;
   @media ${device.tablet} {
     margin-top: 7vh;
     height: 93vh;
     max-height: 93vh;
+    animation: ${FadeIn756} 1s linear normal;
+  }
   }
 
   background-image: ${(props) => {

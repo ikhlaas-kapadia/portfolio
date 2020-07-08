@@ -14,16 +14,13 @@ const StyledHeader = styled.header`
   flex-direction: row;
   top: 0;
   width: 100vw;
-  height: 10vh;
+  height: 50px;
+  /* min-height: 30px; */
   z-index: 90;
   color: ${(props) => {
     return props.click ? "#030303" : "#ffff";
   }};
   display: flex;
-
-  @media ${device.tablet} {
-    height: 7vh;
-  }
 `;
 
 const Header = (props) => {
