@@ -3,9 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 const StyledNav = styled.nav`
-  display: flex;
   width: 20vw;
   height: 100%;
+  border: none;
   /* border: 4px solid purple; */
   @media ${device.tablet} {
     width: 20vw;
@@ -28,7 +28,7 @@ const NormalNav = styled.div`
 `;
 const DropDownNav = styled.div`
   height: 100%;
-  width: 100%;
+  width: 100vw;
   color: white;
   @media ${device.laptop} {
     display: none;
@@ -36,38 +36,40 @@ const DropDownNav = styled.div`
 `;
 
 const DropdownBtn = styled.button`
+  /* overflow: hidden; */
+  outline: none;
   color: ${(props) => {
-    return props.toggle ? "#2682a8" : "white";
+    return props.toggle ? "#aaf3ff" : "white";
   }};
   height: 100%;
-  width: 100%;
+  width: 80%;
   background-color: transparent;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   border: none;
   transform: ${(props) => {
     return props.toggle ? "rotate(90deg)" : "none";
   }};
   transition: 0.2s ease-in;
-  @media ${device.mobileM} {
-    font-size: 2rem;
+  &&:hover {
+    cursor: pointer;
   }
-  @media ${device.tablet} {
-    font-size: 1.9rem;
+
+  @media ${device.laptop} {
+    display: none;
   }
 `;
 
 const DropDownMenu = styled.ul`
-  /* border: 1px solid red; */
   list-style: none;
   display: flex;
   flex-direction: row;
   padding: 0;
   align-items: center;
   justify-content: space-evenly;
-  width: 100vw;
-  height: 5vh;
-  color: black;
-  background-color: #38bacb;
+  width: 100%;
+  min-height: 30px;
+  color: #ffff;
+  background-color: #030303d9;
   opacity: ${(props) => {
     return props.toggle ? 1 : 0;
   }};
@@ -76,9 +78,6 @@ const DropDownMenu = styled.ul`
   }};
   font-size: 0.8rem;
   transition: 0.2s ease-in;
-  @media ${device.tablet} {
-    font-size: 1.5rem;
-  }
 `;
 const DropDownItem = styled.li``;
 
@@ -120,8 +119,6 @@ const StyledLink = styled(Link)`
 
 const Navigation = (props) => {
   const { handleToggle, toggle } = props;
-
-  console.log(window.innerWidth);
   return (
     <StyledNav>
       <NormalNav>
@@ -130,10 +127,10 @@ const Navigation = (props) => {
         <StyledLink to="/projects">Projects</StyledLink>
         <StyledLink to="/contact">Contact</StyledLink>
       </NormalNav>
+      <DropdownBtn toggle={toggle}>
+        <i className="fas fa-bars" onClick={handleToggle}></i>
+      </DropdownBtn>
       <DropDownNav>
-        <DropdownBtn toggle={toggle}>
-          <i className="fas fa-bars" onClick={handleToggle}></i>
-        </DropdownBtn>
         <DropDownMenu toggle={toggle}>
           <DropDownItem>
             <StyledLink to="/">Home</StyledLink>
