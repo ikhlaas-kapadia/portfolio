@@ -11,20 +11,23 @@ const FormContainer = styled.form`
   align-items: center;
   justify-content: space-evenly;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   padding-top: 5%;
   padding-bottom: 1%;
+  margin: 2% auto;
   @media ${device.tablet} {
     font-size: 1rem;
     width: 50vw;
   }
   @media ${device.laptop} {
+    margin: 0.5% auto;
     padding-top: 1%;
     /* max-height: 50px; */
     padding-bottom: 2%;
     align-items: flex-start;
     padding-left: 5%;
     font-size: 0.8rem;
+    width: 50vw;
   }
 `;
 
@@ -70,6 +73,7 @@ const SubmitButton = styled.button`
   border: 1px solid black;
   transition: 0.3s ease-in-out;
   background-color: #c7f3f9;
+  font-size: 0.75rem;
 
   &&:hover {
     background-color: #b0e9f1;
