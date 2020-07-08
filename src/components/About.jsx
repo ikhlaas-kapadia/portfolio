@@ -13,30 +13,14 @@ const StyledMain = styled.main`
   align-items: center;
   height: 100%;
   width: 100vw;
-  margin-top: 10vh;
-
-  @media ${device.tablet} {
-    margin-top: 5vh;
-  }
-  @media ${device.laptop} {
-    margin-top: 2vh;
-  }
+  margin-top: 50px;
 `;
 
 const StyledHeading = styled.h1`
-  margin-top: 3%;
-  font-size: 2rem;
+  margin-top: 2.5%;
+  font-size: 1.7rem;
   font-weight: bold;
-  margin-bottom: 3%;
-  @media ${device.tablet} {
-    margin-top: 4vh;
-    margin-bottom: 1vh;
-  }
-  @media ${device.laptop} {
-    font-size: 2.5rem;
-    margin-bottom: 2vh;
-    margin-top: 7vh;
-  }
+  margin-bottom: 1%;
 `;
 const StyledSubHeading = styled.h2`
   font-size: 0.9rem;
@@ -44,10 +28,7 @@ const StyledSubHeading = styled.h2`
   margin-bottom: 1%;
   text-align: center;
   @media ${device.tablet} {
-    font-size: 1.3rem;
-  }
-  @media ${device.laptop} {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 `;
 
