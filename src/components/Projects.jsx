@@ -18,25 +18,27 @@ const ProjectsContainer = styled.section`
     flex-direction: row;
     /* align-items: space-between; */
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
 const IndividualProject = styled.article`
-  /* position: relative; */
+  position: relative;
   width: 300px;
   height: 100%;
-  min-height: 420px;
+  min-height: 410px;
+  max-height: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: #dffbff;
+  background-color: #e1fbff;
   color: #0d0d0d;
   border: 1px solid black;
   border-radius: 20px;
   margin: 5px;
   @media only screen and (min-width: 615px) {
-    width: 290px;
+    width: 300px;
     max-height: 450px;
     min-height: 450px;
   }
@@ -55,23 +57,24 @@ const ProjectDescription = styled.p`
   font-weight: regular;
   text-align: justify;
   /* height: 10%; */
+  @media ${device.tablet} {
+    font-size: 0.75rem;
+  }
 `;
 
 const ProjectLinksContainer = styled.div`
   /* border: 1px solid red; */
-  position: relative;
+  position: absolute;
   display: flex;
   width: 98%;
-  bottom: 5px;
+  bottom: 10px;
+  /* margin-bottom: 1%; */
   /* height: 10%; */
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  margin-top: 7%;
-  @media only screen and (min-width: 615px) {
-    /* flex-wrap: none; */
-  }
+  /* margin-top: 7%; */
 `;
 
 const ProjectLinkBox = styled.a`
