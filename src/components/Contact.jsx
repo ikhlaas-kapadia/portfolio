@@ -16,7 +16,7 @@ const FormContainer = styled.form`
   padding-bottom: 15px;
   margin: 0 auto;
 
-  @media only screen and (min-width: 425px) {
+  @media ${device.mobileL} {
     /* font-size: 1rem; */
     width: 65vw;
   }
@@ -29,7 +29,7 @@ const FormContainer = styled.form`
     /* font-size: 1rem; */
     width: 50vw;
   }
-  @media only screen and (min-width: 1024px) {
+  @media ${device.laptop} {
     width: 40vw;
     padding-top: 25px;
     padding-bottom: 25px;
