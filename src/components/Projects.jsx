@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { StyledMain, StyledHeading } from "./About";
 import { device } from "../break-points/device-Sizes";
-
-import demo from "../videos/demo1.mp4";
-import hubertImage from "../images/hubert.jpg";
-import gameImage from "../images/game.jpg";
+import demo from "../images/nc.png";
+import hubertImage from "../images/hubert.png";
+import gameImage from "../images/game.png";
 
 const ProjectsContainer = styled.section`
   display: flex;
@@ -15,7 +14,7 @@ const ProjectsContainer = styled.section`
   width: 100%;
   height: fit-content;
   /* flex-wrap: wrap;  */
-  @media ${device.laptop} {
+  @media only screen and (min-width: 615px) {
     flex-direction: row;
     /* align-items: space-between; */
     flex-wrap: wrap;
@@ -23,101 +22,83 @@ const ProjectsContainer = styled.section`
 `;
 
 const IndividualProject = styled.article`
-  position: relative;
-  width: 90%;
-  min-height: 440px;
-  max-height: 440px;
+  /* position: relative; */
+  width: 300px;
   height: 100%;
+  min-height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   background-color: #dffbff;
   color: #0d0d0d;
   border: 1px solid black;
-  border-radius: 5%;
-  margin: 3% auto;
-  @media ${device.tablet} {
-    width: 80%;
-    min-height: 650px;
-    max-height: none;
-  }
-  @media ${device.laptop} {
-    width: 40%;
-    min-height: 550px;
-    max-height: none;
-    margin: 1%;
+  border-radius: 20px;
+  margin: 5px;
+  @media only screen and (min-width: 615px) {
+    width: 290px;
+    max-height: 450px;
+    min-height: 450px;
   }
 `;
 
 const ProjectTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-top: 2%;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
   text-align: center;
-  height: 10%;
 `;
 const ProjectDescription = styled.p`
-  /* border: 1px solid red; */
   padding: 3% 3% 0 3%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: regular;
   text-align: justify;
-  height: 30%;
-  @media ${device.tablet} {
-    font-size: 0.9rem;
-  }
-`;
-const TechDescription = styled.p`
-  /* padding: 3% 3% 0 3%; */
-  font-size: 0.8rem;
-  font-weight: regular;
-  text-align: left;
-  height: 30%;
-  @media ${device.tablet} {
-    font-size: 0.9rem;
-  }
+  /* height: 10%; */
 `;
 
 const ProjectLinksContainer = styled.div`
-  position: absolute;
   /* border: 1px solid red; */
+  position: relative;
   display: flex;
-  width: 90%;
-  bottom: 3px;
-  min-height: 10%;
+  width: 98%;
+  bottom: 5px;
+  /* height: 10%; */
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* margin-top: 15%; */
-  margin-top: 1%;
+  margin-top: 7%;
+  @media only screen and (min-width: 615px) {
+    /* flex-wrap: none; */
+  }
 `;
 
 const ProjectLinkBox = styled.a`
   text-decoration: none;
   border: 1px solid black;
-  min-width: 30%;
+  min-width: 23%;
   height: 100%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding: 1%;
   border-radius: 5px;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   font-weight: 600;
-  background-color: #030303de;
-  color: #ffffff;
-  margin: 1%;
+  background-color: #ffffff;
+  color: #030303;
+  margin-bottom: 0.5%;
 
   &&:hover {
     transform: scale(1.05);
     cursor: pointer;
     opacity: 0.95;
   }
-  @media ${device.tablet} {
-    /* font-size: 0.7rem; */
+  @media only screen and (min-width: 615px) {
+    font-size: 0.6rem;
+    padding: 2%;
   }
   @media ${device.laptop} {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    min-width: 23%;
   }
 `;
 const ProjectLinkText = styled.span`
@@ -132,30 +113,26 @@ const ProjectLinkText = styled.span`
 const StyledSpan = styled.span`
   text-decoration: underline;
 `;
-const ProjectImage = styled.img`
-  display: block;
-  width: 30%;
-  margin: 0 auto;
-  background-color: black;
-  border: 1px solid black;
+
+const ImageContainer = styled.div`
+  border: 1px solid red;
+  max-width: 95%;
+  min-height: 400px;
+
   @media ${device.tablet} {
-    max-height: 300px;
-    width: 30%;
-  }
-  @media ${device.laptop} {
-    height: 260px;
+    /* width: 500px;
+    height: 200px; */
   }
 `;
-const ProjectVideo = styled.video`
-  object-fit: fill;
-  display: block;
+const ProjectImage = styled.img`
+  filter: brightness(90%);
+  object-fit: cover;
+  object-position: 0 0;
   width: 95%;
-  text-align: center;
   margin: 0 auto;
-  background-color: grey;
-  @media ${device.laptop} {
-    height: 260px;
-  }
+  height: 200px;
+  background-color: black;
+  border: 1px solid black;
 `;
 
 const Projects = () => {
@@ -165,21 +142,18 @@ const Projects = () => {
       <ProjectsContainer>
         <IndividualProject>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectVideo loop autoPlay controls>
-            <source src={demo} type="video/mp4"></source>
-          </ProjectVideo>
+          <ProjectImage src={demo}></ProjectImage>
           <ProjectDescription>
             A full stack Reddit style web application. Allows visitors to view
             articles and filter by topic author and other criteria. The backend
             comprises of a RESTful API server created using TDD which serves
             articles by authors.
-            <br></br>
-            <br></br>
-            <TechDescription>
-              <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React,
-              PostgreSQL, Knex, Axios, Express, Node JS, Reach Router, Moment.
-            </TechDescription>
+            <br />
+            <br />
+            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React, PostgreSQL,
+            Knex, Axios, Express, Node JS, Reach Router, Moment.
           </ProjectDescription>
+
           <ProjectLinksContainer>
             <ProjectLinkBox
               href="https://ikhlaas-nc-news.netlify.app/"
@@ -209,7 +183,9 @@ const Projects = () => {
         </IndividualProject>
         <IndividualProject>
           <ProjectTitle>Hubert</ProjectTitle>
+
           <ProjectImage src={hubertImage}></ProjectImage>
+
           <ProjectDescription>
             A full stack cross platform hide and seek game for mobile. Users can
             create an account, create a lobby and play with other players. The
@@ -217,11 +193,8 @@ const Projects = () => {
             seeker in real time.
             <br></br>
             <br></br>
-            <TechDescription>
-              <StyledSpan>Tech Stack:</StyledSpan> JavaScript, Flutter, Dart
-              Socket.IO, Express JS, Node JS, MongoDB, Mongoose, BCrypt Hash,
-              JWT.
-            </TechDescription>
+            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, Flutter, Dart
+            Socket.IO, Express JS, Node JS, MongoDB, Mongoose, BCrypt Hash, JWT.
           </ProjectDescription>
           <ProjectLinksContainer>
             <ProjectLinkBox
@@ -247,7 +220,9 @@ const Projects = () => {
 
         <IndividualProject>
           <ProjectTitle>Noughts And Crosses</ProjectTitle>
+
           <ProjectImage src={gameImage}></ProjectImage>
+
           <ProjectDescription>
             A fun Noughts and Crosses game where two players can play against
             each other or a single player against a bot. Players can change
@@ -256,9 +231,7 @@ const Projects = () => {
             programmatically upon selection.
             <br></br>
             <br></br>
-            <TechDescription>
-              <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React
-            </TechDescription>
+            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React
           </ProjectDescription>
           <ProjectLinksContainer>
             <ProjectLinkBox href="#" target="_blank">
