@@ -25,7 +25,7 @@ const App = () => {
         handleToggle={handleToggle}
         toggle={toggle}
       />
-      <Router>
+      <Router primary={false}>
         <Main path="/" click={click} />
         <About path="/about" />
         <Projects path="/projects" />
