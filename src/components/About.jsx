@@ -17,10 +17,13 @@ const StyledMain = styled.main`
 `;
 
 const StyledHeading = styled.h1`
-  margin-top: 2.5%;
+  margin-top: 4%;
   font-size: 1.7rem;
   font-weight: bold;
   margin-bottom: 1%;
+  @media ${device.tablet} {
+    margin-top: 2%;
+  }
 `;
 const StyledSubHeading = styled.h2`
   font-size: 0.9rem;
