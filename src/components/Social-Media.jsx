@@ -18,7 +18,7 @@ const SocialMediaBox = styled.div`
 const SocialMediaIcon = styled.a`
   /* border: 1px solid yellow; */
   padding: 8px;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   transition: all 250ms ease-in-out;
   &:hover {
     cursor: pointer;
@@ -27,10 +27,10 @@ const SocialMediaIcon = styled.a`
   }
 
   @media ${device.mobileM} {
-    font-size: 2rem;
+    /* font-size: 2rem; */
   }
   @media ${device.tablet} {
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
   @media ${device.laptop} {
     font-size: 1.7rem;
