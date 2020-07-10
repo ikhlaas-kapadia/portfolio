@@ -3,8 +3,8 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "@reach/router";
 import { device } from "../break-points/device-Sizes";
 
+const FadeIn = keyframes`from{margin-top: -1000px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
 const HeroBox = styled.section`
-  /* border: 1px solid red; */
   min-height: 310px;
   height: 70%;
   width: 100%;
@@ -12,21 +12,18 @@ const HeroBox = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #1f2833;
+  color: ${(props) => props.theme.color};
+  animation: ${FadeIn} 0.6s linear normal;
 `;
 
 const HeroHeading = styled.h1`
-  /* border: 1px solid blue; */
   width: 80%;
   font-size: 1.9rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
   font-family: inherit;
   margin-bottom: 20px;
-  color: black;
-  @media ${device.mobileM} {
-    /* font-size: 2.3rem; */
-  }
+
   @media ${device.tablet} {
     font-size: 2.5rem;
   }
@@ -36,7 +33,6 @@ const HeroHeading = styled.h1`
 `;
 
 const HeroText = styled.p`
-  /* border-right: 1px solid red; */
   width: 80%;
   font-weight: 400;
   font-size: 0.8rem;
@@ -52,14 +48,12 @@ const HeroText = styled.p`
 `;
 
 const ButtonContainer = styled.div`
-  /* border: 1px solid red; */
   height: 30%;
   width: 100%;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 `;
 
 const ProjectButton = styled(Link)`
@@ -68,10 +62,11 @@ const ProjectButton = styled(Link)`
   padding: 1rem;
   font-size: 0.7rem;
   text-decoration: none;
-  color: #adf3ff;
-  background-color: #030303cc;
+  color: ${(props) => (props.click ? "#ffff}" : "#adf3ff")};
+  background-color: ${(props) => (props.click ? "#40404078}" : "#030303cc")};
+
   &:hover {
-    background-color: #083942;
+    background-color: ${(props) => (props.click ? "#030303bb}" : "#083942")};
   }
   @media ${device.laptop} {
     font-size: 0.8rem;
@@ -84,17 +79,18 @@ class HeroSection extends Component {
     progressing further />`,
   };
   render() {
+    const { theme, click } = this.props;
     const { about } = this.state;
     return (
       <>
-        <HeroBox>
+        <HeroBox theme={theme} click={click}>
           <HeroHeading>Ikhlaas Kapadia</HeroHeading>
           <HeroText>{about}</HeroText>
-
-          {/* {this.typeWriter()} */}
         </HeroBox>
         <ButtonContainer>
-          <ProjectButton to="/projects">Check Out Projects</ProjectButton>
+          <ProjectButton to="/projects" theme={theme} click={click}>
+            Check Out Projects
+          </ProjectButton>
         </ButtonContainer>
       </>
     );

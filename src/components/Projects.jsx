@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { StyledMain, StyledHeading } from "./About";
 import { device } from "../break-points/device-Sizes";
-import demo from "../images/nc.png";
-import hubertImage from "../images/hubert.png";
-import gameImage from "../images/game.png";
+import ncImage from "../assets/images/nc.png";
+import hubertImage from "../assets/images/hubert.png";
+import gameImage from "../assets/images/game.png";
 
 const ProjectsContainer = styled.section`
   display: flex;
@@ -13,10 +13,9 @@ const ProjectsContainer = styled.section`
   justify-content: space-evenly;
   width: 100%;
   height: fit-content;
-  /* flex-wrap: wrap;  */
+
   @media only screen and (min-width: 615px) {
     flex-direction: row;
-    /* align-items: space-between; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -25,22 +24,23 @@ const ProjectsContainer = styled.section`
 
 const IndividualProject = styled.article`
   position: relative;
-  width: 300px;
+  width: 270px;
   height: 100%;
   min-height: 410px;
   max-height: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e1fbff;
-  color: #0d0d0d;
-  border: 1px solid black;
+  background-color: ${(props) => props.theme.textBackground};
+  color: ${(props) => props.theme.color};
+  border: 1px solid ${(props) => props.theme.border};
   border-radius: 20px;
   margin: 5px;
   @media only screen and (min-width: 615px) {
     width: 300px;
     max-height: 450px;
     min-height: 450px;
+    margin: 15px;
   }
 `;
 
@@ -63,18 +63,14 @@ const ProjectDescription = styled.p`
 `;
 
 const ProjectLinksContainer = styled.div`
-  /* border: 1px solid red; */
   position: absolute;
   display: flex;
   width: 98%;
   bottom: 10px;
-  /* margin-bottom: 1%; */
-  /* height: 10%; */
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* margin-top: 7%; */
 `;
 
 const ProjectLinkBox = styled.a`
@@ -110,23 +106,13 @@ const ProjectLinkText = styled.span`
   height: 90%;
   width: 100%;
   text-align: center;
-  /* border: 1px solid blue; */
 `;
 
 const StyledSpan = styled.span`
   text-decoration: underline;
+  font-weight: 600;
 `;
 
-const ImageContainer = styled.div`
-  border: 1px solid red;
-  max-width: 95%;
-  min-height: 400px;
-
-  @media ${device.tablet} {
-    /* width: 500px;
-    height: 200px; */
-  }
-`;
 const ProjectImage = styled.img`
   filter: brightness(90%);
   object-fit: cover;
@@ -138,14 +124,15 @@ const ProjectImage = styled.img`
   border: 1px solid black;
 `;
 
-const Projects = () => {
+const Projects = (props) => {
+  const { theme } = props;
   return (
-    <StyledMain>
+    <StyledMain theme={theme}>
       <StyledHeading>Projects</StyledHeading>
       <ProjectsContainer>
-        <IndividualProject>
+        <IndividualProject theme={theme}>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectImage src={demo}></ProjectImage>
+          <ProjectImage src={ncImage}></ProjectImage>
           <ProjectDescription>
             A full stack Reddit style web application. Allows visitors to view
             articles and filter by topic author and other criteria. The backend
@@ -184,7 +171,7 @@ const Projects = () => {
             </ProjectLinkBox>
           </ProjectLinksContainer>
         </IndividualProject>
-        <IndividualProject>
+        <IndividualProject theme={theme}>
           <ProjectTitle>Hubert</ProjectTitle>
 
           <ProjectImage src={hubertImage}></ProjectImage>
@@ -221,7 +208,7 @@ const Projects = () => {
           </ProjectLinksContainer>
         </IndividualProject>
 
-        <IndividualProject>
+        <IndividualProject theme={theme}>
           <ProjectTitle>Noughts And Crosses</ProjectTitle>
 
           <ProjectImage src={gameImage}></ProjectImage>

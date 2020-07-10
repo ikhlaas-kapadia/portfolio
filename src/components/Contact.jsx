@@ -15,18 +15,16 @@ const FormContainer = styled.form`
   padding-top: 15px;
   padding-bottom: 15px;
   margin: 0 auto;
-
+  color: ${(props) => props.theme.color};
+  background-color: ${(props) => props.theme.textBackground};
   @media ${device.mobileL} {
-    /* font-size: 1rem; */
     width: 65vw;
   }
   @media only screen and (min-width: 548px) {
-    /* font-size: 1rem; */
     width: 60vw;
   }
   @media only screen and (min-width: 711px) {
     max-height: 550px;
-    /* font-size: 1rem; */
     width: 50vw;
   }
   @media ${device.laptop} {
@@ -52,10 +50,7 @@ const MessageContainer = styled.div`
   box-sizing: border-box;
   height: 100px;
   width: 90%;
-  /* border: 1px solid red; */
   margin: 1%;
-
-  /* padding: 7px; */
 `;
 const ButtonContainer = styled.div`
   width: 90%;
@@ -84,6 +79,7 @@ const ContactContainer = styled.div`
   flex-direction: column;
   width: 90%;
   margin-top: 0;
+
   @media only screen and (min-width: 1024px) {
     width: 65%;
     align-self: flex-start;
@@ -92,14 +88,13 @@ const ContactContainer = styled.div`
 `;
 
 const ContactInfo = styled.a`
-  /* border: 1px solid red; */
   line-height: 0.4rem;
   display: block;
   margin: 1%;
   width: fit-content;
   font-size: 1.2rem;
   text-decoration: none;
-  color: #030303;
+  color: inherit;
   &&:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -107,7 +102,7 @@ const ContactInfo = styled.a`
 
   > span {
     font-size: 0.7rem;
-    padding-bottom: 50%;
+
     @media only screen and (min-width: 1024px) {
       font-size: 0.75rem;
     }
@@ -115,6 +110,7 @@ const ContactInfo = styled.a`
 `;
 
 const ContactPage = (props) => {
+  const { theme } = props;
   return (
     <StyledMain theme={props.theme} click={props.click}>
       <StyledHeading>Get in Touch</StyledHeading>
@@ -123,6 +119,7 @@ const ContactPage = (props) => {
         method="POST"
         enctype="multipart/form-data"
         name="EmailForm"
+        theme={theme}
       >
         <InputContainer>
           <label>
@@ -157,7 +154,7 @@ const ContactPage = (props) => {
                 border: "1px solid black",
                 padding: "3%",
                 resize: "none",
-                "margin-top": "1%",
+                marginTop: "1%",
                 outline: "none",
                 height: "100%",
               }}
@@ -183,7 +180,7 @@ const ContactPage = (props) => {
             <span> - www.github.com/ikhlaas-kapadia</span>
           </ContactInfo>
           <ContactInfo href="mailto:ikhlaas.ka@gmail.com">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <i className="fa fa-envelope" aria-hidden="true"></i>
             <span> - ikhlaas.kapadia@gmail.com</span>
           </ContactInfo>
         </ContactContainer>

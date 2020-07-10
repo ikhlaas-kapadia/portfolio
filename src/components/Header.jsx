@@ -1,38 +1,30 @@
 import React from "react";
-import { device } from "../break-points/device-Sizes";
 import styled from "styled-components";
 import Navigation from "./Navbar";
-import Switch from "./Switch";
+import ThemeSwitch from "./ThemeSwitch";
 import SocialMedia from "./Social-Media";
 
 const StyledHeader = styled.header`
   position: fixed;
-  background-color: ${(props) => {
-    return props.click ? "#ffffff" : "#030303";
-  }};
+  background-color: #030303;
   display: flex;
   flex-direction: row;
   top: 0;
   width: 100vw;
   height: 50px;
-  /* min-height: 30px; */
   z-index: 90;
-  color: ${(props) => {
-    return props.click ? "#030303" : "#ffff";
-  }};
+  color: #ffff;
   display: flex;
 `;
 
 const Header = (props) => {
-  const { click, handleClick, toggle, handleToggle } = props;
+  const { handleClick, toggle, handleToggle } = props;
   return (
-    <>
-      <StyledHeader click={click}>
-        <Navigation toggle={toggle} handleToggle={handleToggle}></Navigation>
-        <Switch handleClick={handleClick}></Switch>
-        <SocialMedia></SocialMedia>
-      </StyledHeader>
-    </>
+    <StyledHeader>
+      <Navigation toggle={toggle} handleToggle={handleToggle}></Navigation>
+      <ThemeSwitch handleClick={handleClick} round></ThemeSwitch>
+      <SocialMedia></SocialMedia>
+    </StyledHeader>
   );
 };
 

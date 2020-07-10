@@ -2,49 +2,45 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
 const SocialMediaBox = styled.div`
-  /* border: 1px solid green; */
-  width: 40vw;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 10px;
-  @media ${device.tablet} {
-    width: 30vw;
-  }
   @media ${device.laptop} {
-    width: 30vw;
+    width: 40%;
   }
 `;
 const SocialMediaIcon = styled.a`
-  /* border: 1px solid yellow; */
+  text-decoration: none;
+  color: #ffff;
   padding: 8px;
   font-size: 1.5rem;
   transition: all 250ms ease-in-out;
   &:hover {
     cursor: pointer;
-    color: #6eeeff;
+    color: #d1f9ff;
     transform: scale(1.2);
   }
 
-  @media ${device.mobileM} {
-    /* font-size: 2rem; */
-  }
-  @media ${device.tablet} {
-    /* font-size: 1.5rem; */
-  }
   @media ${device.laptop} {
     font-size: 1.7rem;
   }
-
 `;
 
 const SocialMedia = () => {
   return (
     <SocialMediaBox>
-      <SocialMediaIcon>
+      <SocialMediaIcon
+        href="https://linkedin.com/in/ikhlaas-kapadia"
+        target="_blank"
+      >
         <i className="fab fa-linkedin"></i>
       </SocialMediaIcon>
-      <SocialMediaIcon>
+      <SocialMediaIcon
+        href="https://github.com/ikhlaas-kapadia"
+        target="_blank"
+      >
         <i className="fab fa-github"></i>
       </SocialMediaIcon>
     </SocialMediaBox>

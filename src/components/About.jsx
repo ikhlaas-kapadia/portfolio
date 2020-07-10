@@ -1,24 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
-import backgroundImage2 from "../background-images/blue.jpg";
+
 const StyledMain = styled.main`
-  /* border: 1px solid red; */
-  /* background-image: inherit; */
-  /* background-color: #d0faff; */
-  /* background-color: #d0faff; */
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
+  min-height: 100vh;
   width: 100vw;
   margin-top: 50px;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.color};
 `;
 
 const StyledHeading = styled.h1`
   margin-top: 4%;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1%;
   @media ${device.tablet} {
@@ -26,7 +25,7 @@ const StyledHeading = styled.h1`
   }
 `;
 const StyledSubHeading = styled.h2`
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
   margin-bottom: 1%;
   text-align: center;
@@ -36,9 +35,7 @@ const StyledSubHeading = styled.h2`
 `;
 
 const Textbox = styled.section`
-  /* border: 1px solid red; */
-  /* background-color: #a7f5ff; */
-  background-color: #dffbff;
+  background-color: ${(props) => props.theme.textBackground};
   width: 90%;
   margin: 1% auto;
   padding: 3% 4%;
@@ -64,25 +61,26 @@ const Text = styled.p`
   text-align: justify;
   line-height: 1.2rem;
   margin-top: 0.2rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   @media ${device.tablet} {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5rem;
   }
 `;
 
-const About = () => {
+const About = (props) => {
+  const { theme, click } = props;
   return (
-    <StyledMain>
+    <StyledMain click={click} theme={theme}>
       <StyledHeading>About Me</StyledHeading>
-      <Textbox>
+      <Textbox theme={theme}>
         <StyledSubHeading>Tech Stack</StyledSubHeading>
         <Text>
           JavaScript, PostgreSQL, Node.js, React.js, Express.js, Reach-Router,
           Axios, React Styled Components.
         </Text>
       </Textbox>
-      <Textbox>
+      <Textbox theme={theme}>
         <StyledSubHeading>Who Am I?</StyledSubHeading>
         <Text>
           I'm Ikhlaas Kapadia and if you find my name difficult to pronounce, my
@@ -94,7 +92,7 @@ const About = () => {
           organisations.
         </Text>
       </Textbox>
-      <Textbox>
+      <Textbox theme={theme}>
         <StyledSubHeading>My Journey To Software Development</StyledSubHeading>
         <Text>
           I began learning html and css towards the end of 2019 using Udemy and
