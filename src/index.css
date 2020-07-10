@@ -23,23 +23,18 @@ code {
 @font-face {
   font-family: "Open Sans";
   font-weight: 400;
-  src: local("Open Sans"), url(./fonts/OpenSans-Regular.ttf) format("truetype");
+  src: local("Open Sans"), url(./assets/fonts/OpenSans-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Open Sans";
   font-weight: 300;
-  src: local("Open Sans"), url(./fonts/OpenSans-Light.ttf) format("truetype");
+  src: local("Open Sans"), url(./assets/fonts/OpenSans-Light.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Open Sans";
   font-weight: 700;
-  src: local("Open Sans"), url(./fonts/OpenSans-Bold.ttf) format("truetype");
+  src: local("Open Sans"), url(./assets/fonts/OpenSans-Bold.ttf) format("truetype");
 }
-@font-face {
-  font-family: "Dancing Script";
-  font-weight: 400;
-  src: local("Dancing Script"),
-    url(./fonts/DancingScript-VariableFont_wght.ttf) format("truetype");
-}
+
