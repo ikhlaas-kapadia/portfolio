@@ -132,7 +132,10 @@ const Projects = (props) => {
       <ProjectsContainer>
         <IndividualProject theme={theme}>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectImage src={ncImage}></ProjectImage>
+          <ProjectImage
+            src={ncImage}
+            alt="Reddit style news site"
+          ></ProjectImage>
           <ProjectDescription>
             A full stack Reddit style web application. Allows visitors to view
             articles and filter by topic author and other criteria. The backend
@@ -174,7 +177,10 @@ const Projects = (props) => {
         <IndividualProject theme={theme}>
           <ProjectTitle>Hubert</ProjectTitle>
 
-          <ProjectImage src={hubertImage}></ProjectImage>
+          <ProjectImage
+            src={hubertImage}
+            alt="Hide and Seek mobile game"
+          ></ProjectImage>
 
           <ProjectDescription>
             A full stack cross platform hide and seek game for mobile. Users can
@@ -211,7 +217,10 @@ const Projects = (props) => {
         <IndividualProject theme={theme}>
           <ProjectTitle>Noughts And Crosses</ProjectTitle>
 
-          <ProjectImage src={gameImage}></ProjectImage>
+          <ProjectImage
+            src={gameImage}
+            alt="Noughts and Crosses Game"
+          ></ProjectImage>
 
           <ProjectDescription>
             A fun Noughts and Crosses game where two players can play against
