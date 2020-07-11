@@ -111,34 +111,54 @@ const ContactInfo = styled.a`
 
 const ContactPage = (props) => {
   const { theme } = props;
+  const clearForm = (e) => {
+    setTimeout((clearForm) => {
+      document.getElementById("contact-form").reset();
+    }, 100);
+  };
   return (
     <StyledMain theme={props.theme} click={props.click}>
       <StyledHeading>Get in Touch</StyledHeading>
       <FormContainer
-        action="mailto:ikhlaas.ka@gmail.com"
+        action="https://formspree.io/xbjzprqa"
         method="POST"
         enctype="multipart/form-data"
         name="EmailForm"
         theme={theme}
+        id="contact-form"
+        onSubmit={clearForm}
       >
         <InputContainer>
           <label>
             First Name <br></br>
-            <InputField type="text" name="First Name" />
+            <InputField
+              type="text"
+              name="First Name"
+              placeholder="Please enter your first name"
+            />
           </label>
         </InputContainer>
         <InputContainer>
           <label>
             Last Name
             <br></br>
-            <InputField type="text" name="Last Name" />
+            <InputField
+              type="text"
+              name="Last Name"
+              placeholder="Please enter your last name"
+            />
           </label>
         </InputContainer>
         <InputContainer>
           <label>
             Email
             <br></br>
-            <InputField type="email" name="Email" required />
+            <InputField
+              type="email"
+              name="_replyto"
+              required
+              placeholder="Please enter your email address"
+            />
           </label>
         </InputContainer>
         <MessageContainer>
@@ -148,6 +168,7 @@ const ContactPage = (props) => {
             <textarea
               type="text"
               name="message"
+              placeholder="Please leave a message"
               style={{
                 display: "inline-block",
                 width: "100%",
@@ -162,7 +183,9 @@ const ContactPage = (props) => {
           </label>
         </MessageContainer>
         <ButtonContainer>
-          <SubmitButton type="submit">Send Message</SubmitButton>
+          <SubmitButton type="submit" value="Send">
+            Send Message
+          </SubmitButton>
         </ButtonContainer>
         <ContactContainer>
           <ContactInfo
