@@ -8,7 +8,6 @@ const StyledMain = styled.main`
   margin-top: 50px;
   height: calc(100vh - 50px);
   width: 100vw;
-
   background-image: ${(props) => {
     return props.click
       ? `linear-gradient(
