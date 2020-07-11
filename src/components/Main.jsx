@@ -12,7 +12,7 @@ const StyledMain = styled.main`
   background-image: ${(props) => {
     return props.click
       ? `linear-gradient(
-      to bottom, #030303, rgb(3, 3, 3), rgba(3, 3, 3, 0.73)),url(${backgroundImage2})`
+      to bottom, #030303, rgba(3, 3, 3, 0.84), rgba(3, 3, 3, 0.73)),url(${backgroundImage2})`
       : `url(${backgroundImage})`;
   }};
   background-size: cover;
