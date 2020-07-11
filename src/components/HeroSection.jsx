@@ -3,9 +3,8 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "@reach/router";
 import { device } from "../break-points/device-Sizes";
 
-const FadeIn = keyframes`from{margin-top: -1000px;, color:transparent;} to {margin-top: 0, color:transparent;}`;
+const FadeIn = keyframes`from{margin-left: -1000px;} to {margin-left: 0}`;
 const HeroBox = styled.section`
-  min-height: 310px;
   height: 70%;
   width: 100%;
   display: flex;
@@ -13,7 +12,7 @@ const HeroBox = styled.section`
   justify-content: center;
   align-items: center;
   color: ${(props) => props.theme.color};
-  animation: ${FadeIn} 0.6s linear normal;
+  animation: ${FadeIn} 0.4s linear normal;
 `;
 
 const HeroHeading = styled.h1`
@@ -54,6 +53,7 @@ const ButtonContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: ${FadeIn} 0.4s linear normal;
 `;
 
 const ProjectButton = styled(Link)`
