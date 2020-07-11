@@ -74,17 +74,17 @@ const About = (props) => {
     <StyledMain click={click} theme={theme}>
       <StyledHeading>About Me</StyledHeading>
       <Textbox theme={theme}>
-        <StyledSubHeading>Tech Stack</StyledSubHeading>
+        <StyledSubHeading>Skills</StyledSubHeading>
         <Text>
           JavaScript, PostgreSQL, Node.js, React.js, Express.js, Reach-Router,
-          Axios, React Styled Components.
+          Axios, React Styled Components, Git version control, TDD and pair
+          programming.
         </Text>
       </Textbox>
       <Textbox theme={theme}>
         <StyledSubHeading>Who Am I?</StyledSubHeading>
         <Text>
-          I'm Ikhlaas Kapadia and if you find my name difficult to pronounce, my
-          nickname is Ricky. I'm an aspiring software developer looking for
+          I'm Ikhlaas Kapadia, an aspiring software developer looking for
           opportunites where I can fulfill my passion to learn more and develop
           my coding skills in a commerical environment. My past professional
           experience has been primarily in Supply Chain Management and
@@ -96,12 +96,11 @@ const About = (props) => {
         <StyledSubHeading>My Journey To Software Development</StyledSubHeading>
         <Text>
           I began learning html and css towards the end of 2019 using Udemy and
-          Freecodecamp in the evenings after my day job. I found UX design
-          really enjoyable and I soon transitioned over to Javascript by which
-          point I was convinced to launch a new career in software development.
-          I invested in a full time coding bootcamp at Northcoders to commit
-          myself to code full time. During the bootcamp I learnt fundamentals of
-          Javascript, built servers using MVC framework and REST APIs. I also
+          Freecodecamp in the evenings after my day job. My interest in coding
+          was solidified after dipping my toes in Javascript and UI
+          interactivity. In January 2020, I enrolled on a full time coding
+          bootcamp at Northcoders where I learnt the fundamentals of Javascript,
+          built servers using MVC framework and created REST APIs. I also
           created databases using PostgreSQL and front end applications with
           React.js. My final project was a full stack mobile application where I
           learnt MongoDB, Mongoose and Sockets.io.
