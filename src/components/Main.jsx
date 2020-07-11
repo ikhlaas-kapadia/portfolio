@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import backgroundImage from "../assets/background-images/blue.jpg";
-import backgroundImage2 from "../assets/background-images/coding.jpg";
+import backgroundImage from "../assets/background-images/blue.png";
+import backgroundImage2 from "../assets/background-images/coding.png";
 import HeroSection from "./HeroSection";
 
 const StyledMain = styled.main`
