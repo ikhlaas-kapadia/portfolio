@@ -207,10 +207,10 @@ const Projects = (props) => {
             <ImageContainer image={"(" + ncImage + ")"}></ImageContainer>
             <DescriptionContainer>
               <p>
-                A full stack Reddit style web application. Users can view
-                articles, filter articles by topic, author and more. Data is
-                served through a RESTful API server created using TDD and MVC
-                framework serving articles by authors.
+                A full stack Reddit style web application where users can view
+                articles, filter articles by topic and other criteria. Articles
+                are served through a RESTful API server created using MVC
+                framework and utilising TDD.
               </p>
               <p>
                 <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React,
