@@ -31,10 +31,8 @@ const IndividualProject = styled.article`
   flex-direction: column;
   align-items: center;
   background: ${(props) => props.theme.textBackground};
-  /* background: linear-gradient(to bottom,white,#e5fdff,#a2f6ff); */
   background-size: cover;
   color: ${(props) => props.theme.color};
-  /* border: 0.1px solid ${(props) => props.theme.border}; */
   box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
   border-radius: 20px;
   margin: 15px;
@@ -75,13 +73,11 @@ const ProjectTitle = styled.h2`
   text-align: center;
   @media ${device.tablet} {
     width: 100%;
-    /* border: 1px solid red; */
   }
 `;
 
 const StyledSection = styled.section`
   @media ${device.tablet} {
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -112,13 +108,11 @@ const ImageContainer = styled.div`
   }
   @media ${device.desktopL} {
     width: 20%;
-    /* height: 100%; */
   }
 `;
 
 const DescriptionContainer = styled.div`
   margin: 0 auto;
-  /* border: 1px solid red; */
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 0.9rem;
@@ -126,7 +120,6 @@ const DescriptionContainer = styled.div`
   text-align: center;
   line-height: 1.2rem;
   width: 85%;
-  /* height: 10%; */
   > p {
     margin-bottom: 15px;
   }
@@ -154,7 +147,6 @@ const StyledSpan = styled.span`
 `;
 
 const LinksContainer = styled.div`
-  /* border: 1px solid red; */
   position: absolute;
   display: flex;
   width: 90%;
