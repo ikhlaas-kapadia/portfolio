@@ -21,107 +21,186 @@ const ProjectsContainer = styled.section`
     justify-content: center;
   }
 `;
-
 const IndividualProject = styled.article`
   position: relative;
-  width: 270px;
+  width: 90%;
   height: 100%;
-  min-height: 410px;
-  max-height: 410px;
+  min-height: 575px;
+  max-height: 575px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${(props) => props.theme.textBackground};
+  background: ${(props) => props.theme.textBackground};
+  /* background: linear-gradient(to bottom,white,#e5fdff,#a2f6ff); */
+  background-size: cover;
   color: ${(props) => props.theme.color};
-  border: 1px solid ${(props) => props.theme.border};
+  /* border: 0.1px solid ${(props) => props.theme.border}; */
+  box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
   border-radius: 20px;
-  margin: 5px;
-  @media only screen and (min-width: 615px) {
-    width: 300px;
-    max-height: 450px;
-    min-height: 450px;
-    margin: 15px;
+  margin: 15px;
+  @media only screen and (min-width: 411px) {
+    min-height: 530px;
+    max-height: 530px;
+  }
+  @media only screen and (min-width: 535px) {
+    min-height: 510px;
+    max-height: 510px;
+  }
+  @media only screen and (min-width: 591px) {
+    min-height: 480px;
+    max-height: 480px;
+  }
+  @media only screen and (min-width: 643px) {
+    min-height: 430px;
+    max-height: 430px;
+  }
+  @media ${device.tablet} {
+    min-height: 100px;
+    height: 300px;
+    max-height: 330px;
+  }
+  @media only screen and (min-width: 902px) {
+    width: 85%;
+  }
+  @media ${device.laptopL} {
+    width: 65%;
   }
 `;
 
 const ProjectTitle = styled.h2`
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-top: 2%;
-  margin-bottom: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
-`;
-const ProjectDescription = styled.p`
-  padding: 3% 3% 0 3%;
-  font-size: 0.7rem;
-  font-weight: regular;
-  text-align: justify;
-  /* height: 10%; */
   @media ${device.tablet} {
-    font-size: 0.75rem;
+    width: 100%;
+    /* border: 1px solid red; */
   }
 `;
 
-const ProjectLinksContainer = styled.div`
-  position: absolute;
-  display: flex;
-  width: 98%;
-  bottom: 10px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+const StyledSection = styled.section`
+  @media ${device.tablet} {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-height: 100%;
+    margin: 0;
+  }
+  @media ${device.desktopL} {
+    width: 99%;
+    height: 65%;
+  }
 `;
 
-const ProjectLinkBox = styled.a`
-  text-decoration: none;
+const ImageContainer = styled.div`
+  margin: 0 auto;
   border: 1px solid black;
-  min-width: 23%;
+  width: 85%;
   height: 100%;
-  padding: 1%;
+  min-height: 200px;
+  background-image: ${(props) => `url${props.image}`};
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media ${device.tablet} {
+    min-height: none;
+    height: 120%;
+    width: 30%;
+    margin-left: 15px;
+  }
+  @media ${device.desktopL} {
+    width: 20%;
+    /* height: 100%; */
+  }
+`;
+
+const DescriptionContainer = styled.div`
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  font-weight: regular;
+  text-align: center;
+  line-height: 1.2rem;
+  width: 85%;
+  /* height: 10%; */
+  > p {
+    margin-bottom: 15px;
+  }
+  @media ${device.mobileL} {
+    text-align: justify;
+  }
+  @media ${device.tablet} {
+    width: calc(100% - 30% - 15px);
+    > p {
+      width: 90%;
+      margin: 15px auto;
+    }
+  }
+  @media ${device.desktopL} {
+    width: 90%;
+    max-width: 90%;
+  }
+`;
+
+const StyledSpan = styled.span`
+  display: inline-block;
+  text-decoration: underline;
+  font-weight: 600;
+  text-align: left;
+`;
+
+const LinksContainer = styled.div`
+  /* border: 1px solid red; */
+  position: absolute;
+  display: flex;
+  width: 90%;
+  bottom: 5px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media ${device.tablet} {
+    align-self: flex-end;
+    position: static;
+    width: 65%;
+    max-height: 100%;
+    flex-wrap: nowrap;
+  }
+  @media ${device.desktopL} {
+    width: 90%;
+  }
+`;
+
+const LinkBox = styled.a`
+  display: block;
+  border: 1px solid black;
+  width: 100px;
+  height: 25px;
+  text-decoration: none;
   border-radius: 5px;
-  font-size: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 600;
   background-color: #ffffff;
   color: #030303;
-  margin-bottom: 0.5%;
+  margin: 2%;
 
   &&:hover {
     transform: scale(1.05);
     cursor: pointer;
     opacity: 0.95;
   }
-  @media only screen and (min-width: 615px) {
-    font-size: 0.6rem;
-    padding: 2%;
-  }
-  @media ${device.laptop} {
-    font-size: 0.6rem;
-    min-width: 23%;
-  }
 `;
-const ProjectLinkText = styled.span`
-  display: block;
-  margin: 0 auto;
+const LinkText = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
   height: 90%;
   width: 100%;
-  text-align: center;
-`;
-
-const StyledSpan = styled.span`
-  text-decoration: underline;
-  font-weight: 600;
-`;
-
-const ProjectImage = styled.img`
-  filter: brightness(90%);
-  object-fit: cover;
-  object-position: 0 0;
-  width: 95%;
-  margin: 0 auto;
-  height: 200px;
-  background-color: black;
-  border: 1px solid black;
 `;
 
 const Projects = (props) => {
@@ -132,117 +211,117 @@ const Projects = (props) => {
       <ProjectsContainer>
         <IndividualProject theme={theme}>
           <ProjectTitle>NC News</ProjectTitle>
-          <ProjectImage
-            src={ncImage}
-            alt="Reddit style news site"
-          ></ProjectImage>
-          <ProjectDescription>
-            A full stack Reddit style web application. Allows visitors to view
-            articles and filter by topic author and other criteria. The backend
-            comprises of a RESTful API server created using TDD which serves
-            articles by authors.
-            <br />
-            <br />
-            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React, PostgreSQL,
-            Knex, Axios, Express, Node JS, Reach Router, Moment.
-          </ProjectDescription>
-
-          <ProjectLinksContainer>
-            <ProjectLinkBox
+          <StyledSection>
+            <ImageContainer image={"(" + ncImage + ")"}></ImageContainer>
+            <DescriptionContainer>
+              <p>
+                A full stack Reddit style web application. Users can view
+                articles, filter articles by topic, author and more. Data is
+                served through a RESTful API server created using TDD and MVC
+                framework serving articles by authors.
+              </p>
+              <p>
+                <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React,
+                PostgreSQL, Knex, Axios, Express, Node JS, Reach Router, Moment,
+                Chai, Supertest.
+              </p>
+            </DescriptionContainer>
+          </StyledSection>
+          <LinksContainer>
+            <LinkBox
               href="https://ikhlaas-nc-news.netlify.app/"
               target="_blank"
             >
-              <ProjectLinkText>Live Site </ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+              <LinkText>FE Site</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://github.com/ikhlaas-kapadia/nc-news"
               target="_blank"
             >
-              <ProjectLinkText> FE Code</ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+              <LinkText>FE Code</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://news-app-ikhlaas.herokuapp.com/api"
               target="_blank"
             >
-              <ProjectLinkText>BE Live Site</ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+              <LinkText>BE Site</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://github.com/ikhlaas-kapadia/nc_news_backend"
               target="_blank"
             >
-              <ProjectLinkText>BE Code</ProjectLinkText>
-            </ProjectLinkBox>
-          </ProjectLinksContainer>
+              <LinkText>BE Code</LinkText>
+            </LinkBox>
+          </LinksContainer>
         </IndividualProject>
         <IndividualProject theme={theme}>
           <ProjectTitle>Hubert</ProjectTitle>
+          <StyledSection>
+            <ImageContainer image={"(" + hubertImage + ")"}></ImageContainer>
+            <DescriptionContainer>
+              <p>
+                A full stack cross platform hide and seek game for mobile. Users
+                can create an account, login and play with other players. The
+                app uses live google map tracking enabling the hider to see the
+                seeker in real time.
+              </p>
+              <p>
+                <StyledSpan>Tech Stack:</StyledSpan> JavaScript, Flutter, Dart
+                Socket.IO, Express JS, Node JS, MongoDB, Mongoose, BCrypt Hash,
+                JWT.
+              </p>
+            </DescriptionContainer>
+          </StyledSection>
 
-          <ProjectImage
-            src={hubertImage}
-            alt="Hide and Seek mobile game"
-          ></ProjectImage>
-
-          <ProjectDescription>
-            A full stack cross platform hide and seek game for mobile. Users can
-            create an account, create a lobby and play with other players. The
-            app uses live google map tracking enabling the hider to see the
-            seeker in real time.
-            <br></br>
-            <br></br>
-            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, Flutter, Dart
-            Socket.IO, Express JS, Node JS, MongoDB, Mongoose, BCrypt Hash, JWT.
-          </ProjectDescription>
-          <ProjectLinksContainer>
-            <ProjectLinkBox
+          <LinksContainer>
+            <LinkBox
               href="https://www.youtube.com/watch?v=wi_zpSYNBdw"
               target="_blank"
             >
-              <ProjectLinkText>Demo Video</ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+              <LinkText>Demo Video</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://github.com/ikhlaas-kapadia/hide-and-seek"
               target="_blank"
             >
-              <ProjectLinkText>FE Code</ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+              <LinkText>FE Code</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://github.com/NC-project-team-2020/BE-hide-and-seek"
               target="_blank"
             >
-              <ProjectLinkText>BE Code</ProjectLinkText>
-            </ProjectLinkBox>
-          </ProjectLinksContainer>
+              <LinkText>BE Code</LinkText>
+            </LinkBox>
+          </LinksContainer>
         </IndividualProject>
-
         <IndividualProject theme={theme}>
           <ProjectTitle>Noughts And Crosses</ProjectTitle>
-
-          <ProjectImage
-            src={gameImage}
-            alt="Noughts and Crosses Game"
-          ></ProjectImage>
-
-          <ProjectDescription>
-            A fun Noughts and Crosses game where two players can play against
-            each other or a single player against a bot. Players can change
-            names, customise X / O symbols and select a range of board sizes.
-            The board sizes and winning sequences are calculated
-            programmatically upon selection.
-            <br></br>
-            <br></br>
-            <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React
-          </ProjectDescription>
-          <ProjectLinksContainer>
-            <ProjectLinkBox href="#" target="_blank">
-              <ProjectLinkText>Live Site</ProjectLinkText>
-            </ProjectLinkBox>
-            <ProjectLinkBox
+          <StyledSection>
+            <ImageContainer image={"(" + gameImage + ")"}></ImageContainer>
+            <DescriptionContainer>
+              <p>
+                A fun Noughts and Crosses game where players can play against
+                each other or against a bot. Players can change names, customise
+                symbols and select a range of board sizes. The board sizes and
+                winning sequences are calculated programmatically upon
+                selection.
+              </p>
+              <p>
+                <StyledSpan>Tech Stack:</StyledSpan> JavaScript, React
+              </p>
+            </DescriptionContainer>
+          </StyledSection>
+          <LinksContainer>
+            <LinkBox href="#" target="_blank">
+              <LinkText>Website</LinkText>
+            </LinkBox>
+            <LinkBox
               href="https://github.com/ikhlaas-kapadia/Noughts-And-Crosses"
               target="_blank"
             >
-              <ProjectLinkText>Code</ProjectLinkText>
-            </ProjectLinkBox>
-          </ProjectLinksContainer>
+              <LinkText>Code</LinkText>
+            </LinkBox>
+          </LinksContainer>
         </IndividualProject>
       </ProjectsContainer>
     </StyledMain>

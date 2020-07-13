@@ -12,15 +12,17 @@ class App extends Component {
     toggle: false,
     normalMode: {
       color: "#030303",
-      background: "none",
-      textBackground: "#e6f8fb",
-      border: "#030303",
+      background: "#dbfcff",
+      textBackground: "#f2feff",
+      border: "#0303037a",
+      textBackground1: "linear-gradient(to bottom,white,#edfafb,#dbfbff)",
     },
     darkMode: {
       color: "#ddfbff",
       background: "#030303",
       textBackground: "#131313",
       border: "#ddfbff",
+      textBackground1: "#131313",
     },
   };
 

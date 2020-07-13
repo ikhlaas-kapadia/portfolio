@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navigation from "./Navbar";
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "./Theme-Switch";
 import SocialMedia from "./Social-Media";
 
 const StyledHeader = styled.header`

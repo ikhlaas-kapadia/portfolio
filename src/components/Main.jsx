@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import backgroundImage from "../assets/background-images/blue.png";
 import backgroundImage2 from "../assets/background-images/coding.png";
-import HeroSection from "./HeroSection";
+import HeroSection from "./Hero-Section";
 
 const StyledMain = styled.main`
   margin-top: 50px;

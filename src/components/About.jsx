@@ -11,15 +11,16 @@ const StyledMain = styled.main`
   min-height: 100vh;
   width: 100vw;
   margin-top: 50px;
+
   background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
 `;
 
 const StyledHeading = styled.h1`
   margin-top: 4%;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1%;
+  margin-bottom: 3%;
   @media ${device.tablet} {
     margin-top: 2%;
   }
@@ -59,11 +60,11 @@ const Textbox = styled.section`
 
 const Text = styled.p`
   text-align: justify;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
   margin-top: 0.2rem;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   @media ${device.tablet} {
-    font-size: 0.85rem;
+    /* font-size: 0.9rem; */
     line-height: 1.5rem;
   }
 `;

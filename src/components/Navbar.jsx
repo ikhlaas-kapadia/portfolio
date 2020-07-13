@@ -2,7 +2,7 @@ import { Link } from "@reach/router";
 import React from "react";
 import styled from "styled-components";
 import { device } from "../break-points/device-Sizes";
-import DropDownNav from "./DropDownNav";
+import DropDownNav from "./Dropdown-Nav";
 const StyledNav = styled.nav`
   width: 40%;
   height: 100%;
