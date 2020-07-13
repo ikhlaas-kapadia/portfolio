@@ -14,15 +14,13 @@ class App extends Component {
       color: "#030303",
       background: "#dbfcff",
       textBackground: "#f2feff",
-      border: "#0303037a",
-      textBackground1: "linear-gradient(to bottom,white,#edfafb,#dbfbff)",
+      border: "#0303037a"
     },
     darkMode: {
       color: "#ddfbff",
       background: "#030303",
       textBackground: "#131313",
-      border: "#ddfbff",
-      textBackground1: "#131313",
+      border: "#ddfbff"
     },
   };
 
