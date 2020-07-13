@@ -37,8 +37,9 @@ const StyledSubHeading = styled.h2`
 
 const Textbox = styled.section`
   background-color: ${(props) => props.theme.textBackground};
+  box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
   width: 90%;
-  margin: 1% auto;
+  margin: 3% auto;
   padding: 3% 4%;
   border-radius: 20px;
   display: flex;
@@ -54,7 +55,7 @@ const Textbox = styled.section`
     align-items: flex-start;
     justify-content: flex-start;
     width: 70%;
-    margin: 0.5% auto;
+    margin: 1.3% auto;
   }
 `;
 
