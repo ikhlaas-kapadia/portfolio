@@ -279,7 +279,7 @@ const Projects = (props) => {
               <LinkText>FE Code</LinkText>
             </LinkBox>
             <LinkBox
-              href="https://github.com/NC-project-team-2020/BE-hide-and-seek"
+              href="https://github.com/ikhlaas-kapadia/Hide-And-Seek-BE"
               target="_blank"
             >
               <LinkText>BE Code</LinkText>
