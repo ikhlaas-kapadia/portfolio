@@ -304,7 +304,7 @@ const Projects = (props) => {
             </DescriptionContainer>
           </StyledSection>
           <LinksContainer>
-            <LinkBox href="#" target="_blank">
+            <LinkBox href="https://ik-xo-game.netlify.app" target="_blank">
               <LinkText>Website</LinkText>
             </LinkBox>
             <LinkBox
