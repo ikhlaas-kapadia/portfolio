@@ -16,7 +16,7 @@ const FormContainer = styled.form`
   padding-bottom: 15px;
   margin: 0 auto;
   color: ${(props) => props.theme.color};
-  box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
+  box-shadow: 1px 1px 2.5px 2.1px ${(props) => props.theme.border};
   background-color: ${(props) => props.theme.textBackground};
   @media ${device.mobileL} {
     width: 65vw;

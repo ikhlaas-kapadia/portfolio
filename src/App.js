@@ -14,13 +14,13 @@ class App extends Component {
       color: "#030303",
       background: "#dbfcff",
       textBackground: "#f2feff",
-      border: "#0303037a"
+      border: " #336c82de",
     },
     darkMode: {
       color: "#ddfbff",
       background: "#030303",
       textBackground: "#131313",
-      border: "#ddfbff"
+      border: "#ddfbff",
     },
   };
 

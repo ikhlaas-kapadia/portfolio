@@ -37,7 +37,7 @@ const StyledSubHeading = styled.h2`
 
 const Textbox = styled.section`
   background-color: ${(props) => props.theme.textBackground};
-  box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
+  box-shadow: 1px 1px 2.5px 2.1px ${(props) => props.theme.border};
   width: 90%;
   margin: 3% auto;
   padding: 3% 4%;

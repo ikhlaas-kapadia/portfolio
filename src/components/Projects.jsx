@@ -13,6 +13,7 @@ const ProjectsContainer = styled.section`
   justify-content: space-evenly;
   width: 100%;
   height: fit-content;
+  font-family: "roboto";
 
   @media only screen and (min-width: 615px) {
     flex-direction: row;
@@ -33,7 +34,7 @@ const IndividualProject = styled.article`
   background: ${(props) => props.theme.textBackground};
   background-size: cover;
   color: ${(props) => props.theme.color};
-  box-shadow: 2px 2px 5px 5px ${(props) => props.theme.border};
+  box-shadow: 1px 1px 2.5px 2.1px ${(props) => props.theme.border};
   border-radius: 20px;
   margin: 15px;
   @media only screen and (min-width: 411px) {
@@ -176,7 +177,7 @@ const LinkBox = styled.a`
   border-radius: 5px;
   font-size: 0.65rem;
   font-weight: 600;
-  background-color: #ffffff;
+  background-color: #e2fdff;
   color: #030303;
   margin: 2%;
 
@@ -187,11 +188,13 @@ const LinkBox = styled.a`
   }
 `;
 const LinkText = styled.span`
+  /* border: 1px solid red; */
+  /* margin: 0 auto; */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   letter-spacing: 0.5px;
-  height: 90%;
+  height: 100%;
   width: 100%;
 `;
 
